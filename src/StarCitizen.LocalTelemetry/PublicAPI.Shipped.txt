@@ -323,6 +323,16 @@ StarCitizen.LocalTelemetry.GameEventType.ActorLeaveSeat = 4 -> StarCitizen.Local
 StarCitizen.LocalTelemetry.GameEventType.ActorRespawn = 5 -> StarCitizen.LocalTelemetry.GameEventType
 StarCitizen.LocalTelemetry.GameEventType.ActorSpawn = 1 -> StarCitizen.LocalTelemetry.GameEventType
 StarCitizen.LocalTelemetry.GameEventType.Unknown = 0 -> StarCitizen.LocalTelemetry.GameEventType
+StarCitizen.LocalTelemetry.GameToggle
+StarCitizen.LocalTelemetry.GameToggle.Category.get -> string!
+StarCitizen.LocalTelemetry.GameToggle.GetState(StarCitizen.LocalTelemetry.VehicleTelemetry? vehicle, StarCitizen.LocalTelemetry.TurretTelemetry? turret = null) -> bool?
+StarCitizen.LocalTelemetry.GameToggle.Id.get -> string!
+StarCitizen.LocalTelemetry.GameToggle.Name.get -> string!
+StarCitizen.LocalTelemetry.GameToggle.OffAction.get -> string!
+StarCitizen.LocalTelemetry.GameToggle.OnAction.get -> string!
+StarCitizen.LocalTelemetry.GameToggle.SetAsync(StarCitizen.LocalTelemetry.ITelemetryClient! client, bool on, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+StarCitizen.LocalTelemetry.GameToggles
+static StarCitizen.LocalTelemetry.GameToggles.Known.get -> StarCitizen.LocalTelemetry.ValueList<StarCitizen.LocalTelemetry.GameToggle!>!
 StarCitizen.LocalTelemetry.GameVersionCheck
 StarCitizen.LocalTelemetry.GameVersionCheck.<Clone>$() -> StarCitizen.LocalTelemetry.GameVersionCheck!
 StarCitizen.LocalTelemetry.GameVersionCheck.BundledGameVersion.get -> System.Version!

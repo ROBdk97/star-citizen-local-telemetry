@@ -181,3 +181,12 @@ Versions follow [SemVer](https://semver.org) and come from git tags (`v0.2.0` â†
 of the game version. While on `0.x`, a minor version may contain breaking changes,
 and a patch only refreshes the schema or actions or fixes bugs. Releases whose
 schema exists only on the PTU are prereleases (`-preview.N`).
+
+## Acknowledgements
+
+A special thank you to [Froxie25](https://github.com/Froxie25) for sharing the
+initial information that sparked this project and set its development in motion.
+
+Thanks to [Purzifal](https://github.com/Purzifal) for
+[sc_make_proto](https://github.com/Purzifal/sc_make_proto), which extracts the
+telemetry schema from the running game.

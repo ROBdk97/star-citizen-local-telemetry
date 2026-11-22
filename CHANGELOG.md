@@ -8,7 +8,11 @@ When releasing, rename `Unreleased` to the version being tagged, for example
 `## [0.1.0-preview.1] - 2025-01-31`. The release workflow uses that section as the
 GitHub release notes.
 
-## [Unreleased]
+## [0.2.0-preview.1] - 2026-11-22
+
+### Added
+
+- `GameToggles.Known`, a catalog of state-aware on/off action pairs.
 
 ## [0.1.0-preview.1] - 2026-11-22
 

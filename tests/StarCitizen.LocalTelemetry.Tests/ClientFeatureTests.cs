@@ -82,6 +82,87 @@ public class ClientFeatureTests
         Assert.Equal([(GameActions.LightsController.LightsOn, (TimeSpan?)null), ("v_invoke_ping", TimeSpan.FromMilliseconds(100))], fake.Triggered);
     }
 
+    [Fact]
+    public async Task ToggleCatalogSendsKnownOnAndOffActions()
+    {
+        var fake = new FakeTelemetryClient();
+        Assert.Equal(GameToggles.Known.Count, GameToggles.Known.Select(toggle => toggle.Id).Distinct().Count());
+        foreach (var toggle in GameToggles.Known)
+        {
+            Assert.Contains(GameActions.Known, action => action.Name == toggle.OnAction);
+            Assert.Contains(GameActions.Known, action => action.Name == toggle.OffAction);
+            Assert.True((await toggle.SetAsync(fake, true, TestContext.Current.CancellationToken)).IsSuccess);
+            Assert.True((await toggle.SetAsync(fake, false, TestContext.Current.CancellationToken)).IsSuccess);
+        }
+
+        Assert.Equal(GameToggles.Known.SelectMany(toggle => new[] { (toggle.OnAction, (TimeSpan?)null), (toggle.OffAction, (TimeSpan?)null) }), fake.Triggered);
+    }
+
+    [Theory]
+    [InlineData("lights", GameActions.LightsController.LightsOn, GameActions.LightsController.LightsOff)]
+    [InlineData("gear", GameActions.SpaceshipMovement.DeployLandingSystem, GameActions.SpaceshipMovement.RetractLandingSystem)]
+    [InlineData("vtol", GameActions.SpaceshipMovement.VtolOn, GameActions.SpaceshipMovement.VtolOff)]
+    [InlineData("decoupled", GameActions.SpaceshipMovement.IfcsVectorDecouplingOn, GameActions.SpaceshipMovement.IfcsVectorDecouplingOff)]
+    [InlineData("gsafe", GameActions.SpaceshipMovement.IfcsGsafeOn, GameActions.SpaceshipMovement.IfcsGsafeOff)]
+    [InlineData("proximity", GameActions.SpaceshipMovement.IfcsProximityAssistOn, GameActions.SpaceshipMovement.IfcsProximityAssistOff)]
+    [InlineData("mastermode", GameActions.SpaceshipMovement.MasterModeSetNav, GameActions.SpaceshipMovement.MasterModeSetScm)]
+    [InlineData("power", GameActions.SpaceshipPower.PowerSetOn, GameActions.SpaceshipPower.PowerSetOff)]
+    [InlineData("shields", GameActions.SpaceshipPower.PowerSetShieldsOn, GameActions.SpaceshipPower.PowerSetShieldsOff)]
+    [InlineData("weapons", GameActions.SpaceshipPower.PowerSetWeaponsOn, GameActions.SpaceshipPower.PowerSetWeaponsOff)]
+    [InlineData("engines", GameActions.SpaceshipPower.PowerSetThrustersOn, GameActions.SpaceshipPower.PowerSetThrustersOff)]
+    [InlineData("doors", GameActions.SpaceshipGeneral.OpenAllDoors, GameActions.SpaceshipGeneral.CloseAllDoors)]
+    [InlineData("locks", GameActions.SpaceshipGeneral.LockAllDoors, GameActions.SpaceshipGeneral.UnlockAllDoors)]
+    [InlineData("nightvision", GameActions.SeatGeneral.LightAmplificationOn, GameActions.SeatGeneral.LightAmplificationOff)]
+    public void ToggleCatalogMapsActions(string id, string onAction, string offAction)
+    {
+        var toggle = Assert.Single(GameToggles.Known, item => item.Id == id);
+        Assert.Equal(onAction, toggle.OnAction);
+        Assert.Equal(offAction, toggle.OffAction);
+    }
+
+    [Fact]
+    public void ToggleCatalogReadsReportedAndUnavailableStates()
+    {
+        var vehicle = new VehicleTelemetry("Test", "", "", VehicleType.Spaceship, true,
+            new DoorStatus(DoorOpenState.Closed, DoorLockState.Unknown), null,
+            new FlightTelemetry(false, DeploymentState.Deploying, DeploymentState.Deployed, null, null, null),
+            null, null, 0, new MasterModeStatus(MasterMode.Scm, false));
+        GameToggle Get(string id) => Assert.Single(GameToggles.Known, toggle => toggle.Id == id);
+
+        Assert.True(Get("lights").GetState(vehicle));
+        Assert.False(Get("doors").GetState(vehicle));
+        Assert.Null(Get("locks").GetState(vehicle));
+        Assert.Null(Get("gear").GetState(vehicle));
+        Assert.True(Get("vtol").GetState(vehicle));
+        Assert.False(Get("mastermode").GetState(vehicle));
+        Assert.Null(Get("power").GetState(vehicle));
+        Assert.True(Get("nightvision").GetState(null, new TurretTelemetry(true)));
+        Assert.Null(Get("lights").GetState(null));
+        Assert.Null(Get("mastermode").GetState(vehicle with { MasterMode = new MasterModeStatus(MasterMode.Stealth, false) }));
+    }
+
+    [Fact]
+    public void ToggleCatalogReadsEnabledAndPowerFields()
+    {
+        var settings = new FlightSettings(
+            new Availability(true, false), null, null, new Availability(true, false), null, false,
+            null, new Availability(false, true), null, null, null, false, false, false, false,
+            null, false, null, false);
+        var vehicle = new VehicleTelemetry("Test", "", "", VehicleType.Spaceship, false,
+            null, null, new FlightTelemetry(false, null, null, null, settings, null),
+            new PowerStatus(true, false, true, false, false, false, false, false, false), null, 0, null);
+        GameToggle Get(string id) => Assert.Single(GameToggles.Known, toggle => toggle.Id == id);
+
+        Assert.False(Get("decoupled").GetState(vehicle));
+        Assert.True(Get("gsafe").GetState(vehicle));
+        Assert.False(Get("proximity").GetState(vehicle));
+        Assert.True(Get("power").GetState(vehicle));
+        Assert.False(Get("engines").GetState(vehicle));
+        Assert.True(Get("weapons").GetState(vehicle));
+        Assert.False(Get("shields").GetState(vehicle));
+        Assert.False(Get("nightvision").GetState(vehicle, new TurretTelemetry(true)));
+    }
+
     private static TelemetryStreamResponse FrameWithUnknownData()
     {
         var frame = new TelemetryStreamResponse

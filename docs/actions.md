@@ -57,6 +57,37 @@ Constant names come from the action names. The `v_` prefix is removed, as is
 `SetMasterModeAsync` throws `ArgumentOutOfRangeException` for any mode other than
 `Navigation` or `Scm`.
 
+## State-aware toggles
+
+`GameToggles.Known` lists action pairs with a corresponding telemetry state.
+Each definition has a stable ID, display name, group, on/off action names,
+`GetState(vehicle, turret)` and `SetAsync(client, on)`. A state is `null` when
+the relevant section is missing, the game reports an unknown state, or a
+component is transitioning. Pass the latest sections from partial frames and
+clear them when disconnecting or leaving the vehicle.
+
+| ID | Reported on state |
+|---|---|
+| `lights` | Exterior lights on |
+| `gear`, `vtol` | Fully deployed |
+| `decoupled` | Coupled setting disabled |
+| `gsafe`, `proximity` | Setting enabled (not necessarily active) |
+| `mastermode` | NAV; SCM is off, other modes are unknown |
+| `power`, `shields`, `weapons`, `engines` | Powerplants, shield generators, weapons or engines powered, respectively |
+| `doors`, `locks` | Doors open or locked, respectively |
+| `nightvision` | Flight light amplification; turret light amplification if flight settings are unavailable |
+
+```csharp
+var lights = GameToggles.Known.Single(toggle => toggle.Id == "lights");
+bool? state = lights.GetState(latestVehicle, latestTurret);
+if (state.HasValue) // In response to an explicit user request.
+    await lights.SetAsync(client, !state.Value, cancellationToken);
+```
+
+The catalog is based on the bundled schema, not the running game's advertised
+actions. The game may reject an action or not support triggering actions at all.
+Read telemetry again to confirm the result.
+
 ## Results and retries
 
 Every trigger returns an `ActionResult`. Check `IsSuccess`: the game can reject an
