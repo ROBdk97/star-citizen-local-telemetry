@@ -22,12 +22,15 @@ It reconnects automatically, so you can start it before the game.
   sent immediately, without confirmation. A hold duration is available only for holdable
   actions.
 - **Log**: connection changes, game events and action results (latest 500).
+  A disconnect is logged once until the connection is restored.
 - **Raw JSON**: the last value of each section.
 - **Setup**: finds the Star Citizen installation (or use **Use folder** with the
   folder that contains `LIVE`/`PTU`), shows each channel's telemetry configuration
   and `StarCitizen.exe` version, and enables or disables telemetry with
   `TelemetrySetup` (environment variable plus `user.cfg`, which is backed up
-  first). PTU is selected by default. Restart the RSI Launcher and the game afterwards.
+  first). PTU is selected by default. The enabled/disabled indicator reflects the
+  saved configuration, not changes made through the in-game console. Restart the
+  RSI Launcher and the game afterwards.
 
 The status bar shows the connection state, frame count and age of the last frame.
 

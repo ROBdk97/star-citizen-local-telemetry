@@ -6,6 +6,14 @@ namespace TelemetryExplorer;
 /// <summary>UI-independent text for the Setup tab.</summary>
 internal static class SetupStatusText
 {
+    public static string DescribeState(TelemetrySetupStatus status) => status.UserCfgEnabled switch
+    {
+        false => "Configured telemetry: disabled",
+        true when status.EnvironmentVariableEnabled => "Configured telemetry: enabled",
+        true => "Configured telemetry: incomplete (environment variable not enabled)",
+        null => "Configured telemetry: unknown (not set in user.cfg)",
+    };
+
     public static string Describe(TelemetrySetupStatus status, GameVersionCheck version)
     {
         var cfg = status.UserCfgEnabled switch

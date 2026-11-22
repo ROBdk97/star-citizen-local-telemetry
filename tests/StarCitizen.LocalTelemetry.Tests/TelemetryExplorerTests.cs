@@ -66,10 +66,34 @@ public class TelemetryExplorerTests
         Assert.Contains("user.cfg: not set", text);
         Assert.Contains("StarCitizen.exe not found", text);
         Assert.EndsWith("Telemetry is not configured.", text);
+        Assert.Equal("Configured telemetry: unknown (not set in user.cfg)", SetupStatusText.DescribeState(status));
+        Assert.Equal("Configured telemetry: enabled", SetupStatusText.DescribeState(status with { UserCfgEnabled = true }));
+        Assert.Equal("Configured telemetry: disabled", SetupStatusText.DescribeState(status with { UserCfgEnabled = false }));
+        Assert.Equal("Configured telemetry: incomplete (environment variable not enabled)",
+            SetupStatusText.DescribeState(status with { UserCfgEnabled = true, EnvironmentVariableEnabled = false }));
 
         Assert.Equal("Enable: nothing to change.", SetupStatusText.Describe("Enable", new(false, false, null)));
         Assert.Equal(@"Enable: changed environment variable and user.cfg. Backup: X:\user.cfg.bak. Restart the RSI Launcher and the game.",
             SetupStatusText.Describe("Enable", new(true, true, @"X:\user.cfg.bak")));
+    }
+
+    [Fact]
+    public void DisconnectIsLoggedOnceUntilConnectionIsRestored()
+    {
+        var model = new TelemetryModel();
+        var disconnected = new TelemetryStreamEvent(TelemetryStreamEventKind.Disconnected, Reason: "Unavailable: Error connecting to subchannel.");
+        model.Apply(disconnected);
+        model.Apply(new TelemetryStreamEvent(TelemetryStreamEventKind.Connecting));
+        model.Apply(new TelemetryStreamEvent(TelemetryStreamEventKind.Disconnected, Reason: "Another error"));
+        var entry = Assert.Single(model.GetSnapshot().Log);
+        Assert.Equal("Disconnected: Unavailable: Error connecting to subchannel.", entry.Text);
+        Assert.Contains("Another error", model.GetSnapshot().Status);
+        Assert.Contains("retrying", model.GetSnapshot().Status);
+
+        model.Apply(new TelemetryStreamEvent(TelemetryStreamEventKind.Connected));
+        model.Apply(disconnected);
+        Assert.Equal(3, model.GetSnapshot().Log.Count);
+        Assert.Equal(entry.Text, model.GetSnapshot().Log[0].Text);
     }
 
     private sealed class ManualTime : TimeProvider

@@ -40,6 +40,7 @@ public sealed class TelemetryModel(TimeProvider? timeProvider = null)
     private readonly LinkedList<LogEntry> _log = new();
     private long _version;
     private string _status = "Not connected";
+    private bool _disconnectLogged;
     private long _frameCount;
     private DateTimeOffset? _lastFrameAt;
     private ModelSnapshot? _cached;
@@ -61,11 +62,16 @@ public sealed class TelemetryModel(TimeProvider? timeProvider = null)
                     break;
                 case TelemetryStreamEventKind.Connected:
                     _status = "Connected";
+                    _disconnectLogged = false;
                     AddLog("Connection", "Connected");
                     break;
                 case TelemetryStreamEventKind.Disconnected:
                     _status = $"Disconnected ({streamEvent.Reason}), retrying…";
-                    AddLog("Connection", $"Disconnected: {streamEvent.Reason}");
+                    if (!_disconnectLogged)
+                    {
+                        AddLog("Connection", $"Disconnected: {streamEvent.Reason}");
+                        _disconnectLogged = true;
+                    }
                     break;
                 case TelemetryStreamEventKind.SchemaMismatch:
                     AddLog("Schema", $"{streamEvent.Mismatch} (schema is for StarCitizen.exe {TelemetrySchema.BundledGameVersion})");

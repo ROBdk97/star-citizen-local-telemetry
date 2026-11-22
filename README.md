@@ -142,6 +142,8 @@ mean a different schema. To update the schema, see [tools/README.md](tools/READM
   and enables or disables telemetry for an installed channel.
 - `samples/TelemetryMonitor`: a minimal read-only console app.
 
+![Telemetry Explorer](docs/images/telemetry-explorer.png)
+
 ```powershell
 dotnet run --project .\samples\TelemetryExplorer
 dotnet run --project .\samples\TelemetryMonitor

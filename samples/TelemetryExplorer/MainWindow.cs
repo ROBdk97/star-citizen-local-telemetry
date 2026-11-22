@@ -49,6 +49,7 @@ internal sealed class MainWindow
     private TextBox _installPath = null!;
     private ComboBox _channelBox = null!;
     private TextBlock _setupStatus = null!;
+    private TextBlock _setupState = null!;
     private TextBlock _setupResult = null!;
     private Button _enableButton = null!;
     private Button _disableButton = null!;
@@ -200,6 +201,7 @@ internal sealed class MainWindow
             ShowSetupStatus();
         });
         _setupStatus = new TextBlock().Text("Looking for Star Citizen…");
+        _setupState = new TextBlock().Text("Configured telemetry: unknown").Bold();
         _setupResult = new TextBlock().Text("");
         _enableButton = new Button().Content("Enable telemetry").OnClick(() => ApplySetup(enable: true));
         _disableButton = new Button().Content("Disable telemetry").OnClick(() => ApplySetup(enable: false));
@@ -217,8 +219,10 @@ internal sealed class MainWindow
                 _enableButton,
                 _disableButton,
                 new Button().Content("Refresh").OnClick(ShowSetupStatus)),
+            _setupState,
             _setupStatus,
             _setupResult,
+            new TextBlock().Text("This shows the saved configuration, not the current in-game console setting."),
             new TextBlock().Text(
                 $"Enable sets the user environment variable {TelemetrySetup.EnvironmentVariable}=true and " +
                 $"{TelemetrySetup.ConsoleVariable} = 1 in the channel's user.cfg (backed up first). " +
@@ -227,6 +231,7 @@ internal sealed class MainWindow
 
     private async Task LocateGameAsync()
     {
+        _setupState.Text = "Configured telemetry: unknown";
         _setupStatus.Text = "Looking for Star Citizen…";
         try
         {
@@ -253,6 +258,7 @@ internal sealed class MainWindow
         {
             _setupChannel = null;
             _channelBox.Items([]);
+            _setupState.Text = "Configured telemetry: unknown";
             _setupStatus.Text = "Star Citizen was not found. Enter the install folder (the one containing LIVE or PTU).";
             _enableButton.IsEnabled = _disableButton.IsEnabled = false;
             return;
@@ -269,13 +275,20 @@ internal sealed class MainWindow
     private void ShowSetupStatus()
     {
         _enableButton.IsEnabled = _disableButton.IsEnabled = _setupChannel is not null;
-        if (_setupChannel is not { } channel) return;
+        if (_setupChannel is not { } channel)
+        {
+            _setupState.Text = "Configured telemetry: unknown";
+            return;
+        }
         try
         {
-            _setupStatus.Text = SetupStatusText.Describe(TelemetrySetup.GetStatus(channel), TelemetrySchema.CheckGameVersion(channel));
+            var status = TelemetrySetup.GetStatus(channel);
+            _setupState.Text = SetupStatusText.DescribeState(status);
+            _setupStatus.Text = SetupStatusText.Describe(status, TelemetrySchema.CheckGameVersion(channel));
         }
         catch (Exception ex)
         {
+            _setupState.Text = "Configured telemetry: unknown";
             _setupStatus.Text = $"Could not read the configuration: {ex.Message}";
         }
     }
