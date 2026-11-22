@@ -64,5 +64,9 @@ the policy. To release:
 2. Move the `PublicAPI.Unshipped.txt` entries to `PublicAPI.Shipped.txt`.
 3. Commit, then tag and push: `git tag v0.1.0-preview.1` and `git push origin v0.1.0-preview.1`.
 
-The release workflow runs CI and creates a GitHub release with the packages
-attached; tags containing `-` are marked as prereleases.
+The release workflow runs CI, publishes the package to NuGet.org using
+[Trusted Publishing](https://learn.microsoft.com/nuget/nuget-org/trusted-publishing),
+and creates a GitHub release with the packages attached; tags containing `-` are
+marked as prereleases. Configure a trusted-publishing policy for `release.yml`
+and add the GitHub Actions repository secret `NUGET_USER` with your NuGet.org
+profile username. No long-lived API key is needed.

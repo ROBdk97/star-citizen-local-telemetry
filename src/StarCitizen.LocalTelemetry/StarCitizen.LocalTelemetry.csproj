@@ -10,7 +10,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup Label="NuGet">
-		<PackageId>StarCitizen.LocalTelemetry</PackageId>
+		<PackageId>ROBdk97.ScLocalTelemetry</PackageId>
 		<MinVerTagPrefix>v</MinVerTagPrefix>
 		<MinVerDefaultPreReleaseIdentifiers>preview.0</MinVerDefaultPreReleaseIdentifiers>
 		<Authors>ROBdk97</Authors>

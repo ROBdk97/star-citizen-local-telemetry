@@ -58,7 +58,7 @@ or build it yourself, then add the folder as a package source:
 ```powershell
 dotnet pack .\src\StarCitizen.LocalTelemetry -c Release -o .\artifacts
 dotnet nuget add source C:\path\to\artifacts --name local-telemetry
-dotnet add package StarCitizen.LocalTelemetry --prerelease
+dotnet add package ROBdk97.ScLocalTelemetry --prerelease
 ```
 
 ### 3. Read telemetry
