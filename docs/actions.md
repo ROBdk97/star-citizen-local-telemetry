@@ -5,6 +5,11 @@ The game advertises the actions it accepts through `ListTriggerableActions`.
 by category. Each category class also has a `Category` constant, and
 `GameActions.Known` lists all of them as `GameAction` records.
 
+On LIVE `4.10.3-live.13220821`, telemetry can be read but actions cannot be
+triggered. The action catalog above comes from PTU. Applications can catch
+`Grpc.Core.RpcException` with `StatusCode.Unimplemented` and report that the
+RPC is unavailable.
+
 > Triggering an action changes the game, as if the player pressed the key binding.
 > Only trigger actions in response to an explicit user request.
 

@@ -82,6 +82,9 @@ only changed sections, `ObserveChanges()`. See
 
 ### 4. Trigger actions
 
+On LIVE `4.10.3-live.13220821`, telemetry can be read but actions cannot be
+triggered. The bundled action catalog comes from PTU.
+
 ```csharp
 // Actions change the game. Only send them in response to a user request.
 var result = await client.SetLightsAsync(true, stop.Token);
