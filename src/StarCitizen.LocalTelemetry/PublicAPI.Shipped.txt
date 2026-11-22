@@ -1,0 +1,999 @@
+#nullable enable
+Microsoft.Extensions.DependencyInjection.TelemetryServiceCollectionExtensions
+StarCitizen.LocalTelemetry.ActionResult
+StarCitizen.LocalTelemetry.ActionResult.<Clone>$() -> StarCitizen.LocalTelemetry.ActionResult!
+StarCitizen.LocalTelemetry.ActionResult.ActionResult(StarCitizen.LocalTelemetry.ActionStatus Status, string! Message) -> void
+StarCitizen.LocalTelemetry.ActionResult.Deconstruct(out StarCitizen.LocalTelemetry.ActionStatus Status, out string! Message) -> void
+StarCitizen.LocalTelemetry.ActionResult.Equals(StarCitizen.LocalTelemetry.ActionResult? other) -> bool
+StarCitizen.LocalTelemetry.ActionResult.IsSuccess.get -> bool
+StarCitizen.LocalTelemetry.ActionResult.Message.get -> string!
+StarCitizen.LocalTelemetry.ActionResult.Message.init -> void
+StarCitizen.LocalTelemetry.ActionResult.Status.get -> StarCitizen.LocalTelemetry.ActionStatus
+StarCitizen.LocalTelemetry.ActionResult.Status.init -> void
+StarCitizen.LocalTelemetry.ActionStatus
+StarCitizen.LocalTelemetry.ActionStatus.Failed = 5 -> StarCitizen.LocalTelemetry.ActionStatus
+StarCitizen.LocalTelemetry.ActionStatus.Filtered = 7 -> StarCitizen.LocalTelemetry.ActionStatus
+StarCitizen.LocalTelemetry.ActionStatus.HoldNotAllowed = 6 -> StarCitizen.LocalTelemetry.ActionStatus
+StarCitizen.LocalTelemetry.ActionStatus.MapInactive = 3 -> StarCitizen.LocalTelemetry.ActionStatus
+StarCitizen.LocalTelemetry.ActionStatus.Ok = 1 -> StarCitizen.LocalTelemetry.ActionStatus
+StarCitizen.LocalTelemetry.ActionStatus.RateLimited = 4 -> StarCitizen.LocalTelemetry.ActionStatus
+StarCitizen.LocalTelemetry.ActionStatus.Unknown = 0 -> StarCitizen.LocalTelemetry.ActionStatus
+StarCitizen.LocalTelemetry.ActionStatus.UnknownAction = 2 -> StarCitizen.LocalTelemetry.ActionStatus
+StarCitizen.LocalTelemetry.ActorEnvironment
+StarCitizen.LocalTelemetry.ActorEnvironment.<Clone>$() -> StarCitizen.LocalTelemetry.ActorEnvironment!
+StarCitizen.LocalTelemetry.ActorEnvironment.ActorEnvironment(float ExternalTemperature, float AmbientRadiationRate, bool BreathableAtmosphere) -> void
+StarCitizen.LocalTelemetry.ActorEnvironment.AmbientRadiationRate.get -> float
+StarCitizen.LocalTelemetry.ActorEnvironment.AmbientRadiationRate.init -> void
+StarCitizen.LocalTelemetry.ActorEnvironment.BreathableAtmosphere.get -> bool
+StarCitizen.LocalTelemetry.ActorEnvironment.BreathableAtmosphere.init -> void
+StarCitizen.LocalTelemetry.ActorEnvironment.Deconstruct(out float ExternalTemperature, out float AmbientRadiationRate, out bool BreathableAtmosphere) -> void
+StarCitizen.LocalTelemetry.ActorEnvironment.Equals(StarCitizen.LocalTelemetry.ActorEnvironment? other) -> bool
+StarCitizen.LocalTelemetry.ActorEnvironment.ExternalTemperature.get -> float
+StarCitizen.LocalTelemetry.ActorEnvironment.ExternalTemperature.init -> void
+StarCitizen.LocalTelemetry.ActorStatus
+StarCitizen.LocalTelemetry.ActorStatus.<Clone>$() -> StarCitizen.LocalTelemetry.ActorStatus!
+StarCitizen.LocalTelemetry.ActorStatus.ActorStatus(StarCitizen.LocalTelemetry.LocomotionState Locomotion, StarCitizen.LocalTelemetry.CrewRole CrewRole, string! SeatName, long UecBalance) -> void
+StarCitizen.LocalTelemetry.ActorStatus.CrewRole.get -> StarCitizen.LocalTelemetry.CrewRole
+StarCitizen.LocalTelemetry.ActorStatus.CrewRole.init -> void
+StarCitizen.LocalTelemetry.ActorStatus.Deconstruct(out StarCitizen.LocalTelemetry.LocomotionState Locomotion, out StarCitizen.LocalTelemetry.CrewRole CrewRole, out string! SeatName, out long UecBalance) -> void
+StarCitizen.LocalTelemetry.ActorStatus.Equals(StarCitizen.LocalTelemetry.ActorStatus? other) -> bool
+StarCitizen.LocalTelemetry.ActorStatus.Locomotion.get -> StarCitizen.LocalTelemetry.LocomotionState
+StarCitizen.LocalTelemetry.ActorStatus.Locomotion.init -> void
+StarCitizen.LocalTelemetry.ActorStatus.SeatName.get -> string!
+StarCitizen.LocalTelemetry.ActorStatus.SeatName.init -> void
+StarCitizen.LocalTelemetry.ActorStatus.UecBalance.get -> long
+StarCitizen.LocalTelemetry.ActorStatus.UecBalance.init -> void
+StarCitizen.LocalTelemetry.ActorTelemetry
+StarCitizen.LocalTelemetry.ActorTelemetry.<Clone>$() -> StarCitizen.LocalTelemetry.ActorTelemetry!
+StarCitizen.LocalTelemetry.ActorTelemetry.ActorTelemetry(StarCitizen.LocalTelemetry.ActorVitals? Vitals, StarCitizen.LocalTelemetry.ActorStatus? State, StarCitizen.LocalTelemetry.ActorEnvironment? Environment) -> void
+StarCitizen.LocalTelemetry.ActorTelemetry.Deconstruct(out StarCitizen.LocalTelemetry.ActorVitals? Vitals, out StarCitizen.LocalTelemetry.ActorStatus? State, out StarCitizen.LocalTelemetry.ActorEnvironment? Environment) -> void
+StarCitizen.LocalTelemetry.ActorTelemetry.Environment.get -> StarCitizen.LocalTelemetry.ActorEnvironment?
+StarCitizen.LocalTelemetry.ActorTelemetry.Environment.init -> void
+StarCitizen.LocalTelemetry.ActorTelemetry.Equals(StarCitizen.LocalTelemetry.ActorTelemetry? other) -> bool
+StarCitizen.LocalTelemetry.ActorTelemetry.State.get -> StarCitizen.LocalTelemetry.ActorStatus?
+StarCitizen.LocalTelemetry.ActorTelemetry.State.init -> void
+StarCitizen.LocalTelemetry.ActorTelemetry.Vitals.get -> StarCitizen.LocalTelemetry.ActorVitals?
+StarCitizen.LocalTelemetry.ActorTelemetry.Vitals.init -> void
+StarCitizen.LocalTelemetry.ActorVitals
+StarCitizen.LocalTelemetry.ActorVitals.<Clone>$() -> StarCitizen.LocalTelemetry.ActorVitals!
+StarCitizen.LocalTelemetry.ActorVitals.ActorVitals(StarCitizen.LocalTelemetry.Gauge? Health, StarCitizen.LocalTelemetry.Gauge? Oxygen, StarCitizen.LocalTelemetry.Gauge? Hunger, StarCitizen.LocalTelemetry.Gauge? Thirst, StarCitizen.LocalTelemetry.Gauge? BodyTemperature, float HeartRate, float Gravity, float Pressure, int IntoxicationLevel) -> void
+StarCitizen.LocalTelemetry.ActorVitals.BodyTemperature.get -> StarCitizen.LocalTelemetry.Gauge?
+StarCitizen.LocalTelemetry.ActorVitals.BodyTemperature.init -> void
+StarCitizen.LocalTelemetry.ActorVitals.Deconstruct(out StarCitizen.LocalTelemetry.Gauge? Health, out StarCitizen.LocalTelemetry.Gauge? Oxygen, out StarCitizen.LocalTelemetry.Gauge? Hunger, out StarCitizen.LocalTelemetry.Gauge? Thirst, out StarCitizen.LocalTelemetry.Gauge? BodyTemperature, out float HeartRate, out float Gravity, out float Pressure, out int IntoxicationLevel) -> void
+StarCitizen.LocalTelemetry.ActorVitals.Equals(StarCitizen.LocalTelemetry.ActorVitals? other) -> bool
+StarCitizen.LocalTelemetry.ActorVitals.Gravity.get -> float
+StarCitizen.LocalTelemetry.ActorVitals.Gravity.init -> void
+StarCitizen.LocalTelemetry.ActorVitals.Health.get -> StarCitizen.LocalTelemetry.Gauge?
+StarCitizen.LocalTelemetry.ActorVitals.Health.init -> void
+StarCitizen.LocalTelemetry.ActorVitals.HeartRate.get -> float
+StarCitizen.LocalTelemetry.ActorVitals.HeartRate.init -> void
+StarCitizen.LocalTelemetry.ActorVitals.Hunger.get -> StarCitizen.LocalTelemetry.Gauge?
+StarCitizen.LocalTelemetry.ActorVitals.Hunger.init -> void
+StarCitizen.LocalTelemetry.ActorVitals.IntoxicationLevel.get -> int
+StarCitizen.LocalTelemetry.ActorVitals.IntoxicationLevel.init -> void
+StarCitizen.LocalTelemetry.ActorVitals.Oxygen.get -> StarCitizen.LocalTelemetry.Gauge?
+StarCitizen.LocalTelemetry.ActorVitals.Oxygen.init -> void
+StarCitizen.LocalTelemetry.ActorVitals.Pressure.get -> float
+StarCitizen.LocalTelemetry.ActorVitals.Pressure.init -> void
+StarCitizen.LocalTelemetry.ActorVitals.Thirst.get -> StarCitizen.LocalTelemetry.Gauge?
+StarCitizen.LocalTelemetry.ActorVitals.Thirst.init -> void
+StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.AnnunciatorState.MajorFlashing = 5 -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.AnnunciatorState.MajorOn = 6 -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.AnnunciatorState.MinorFlashing = 3 -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.AnnunciatorState.MinorOn = 4 -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.AnnunciatorState.Nominal = 1 -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.AnnunciatorState.Off = 2 -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.AnnunciatorState.Unknown = 0 -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.Annunciators
+StarCitizen.LocalTelemetry.Annunciators.<Clone>$() -> StarCitizen.LocalTelemetry.Annunciators!
+StarCitizen.LocalTelemetry.Annunciators.Annunciators(StarCitizen.LocalTelemetry.AnnunciatorState Power, StarCitizen.LocalTelemetry.AnnunciatorState Weapons, StarCitizen.LocalTelemetry.AnnunciatorState Thrusters, StarCitizen.LocalTelemetry.AnnunciatorState Shields, StarCitizen.LocalTelemetry.AnnunciatorState Coolers, StarCitizen.LocalTelemetry.AnnunciatorState QuantumDrive, StarCitizen.LocalTelemetry.AnnunciatorState Radar, StarCitizen.LocalTelemetry.AnnunciatorState Proximity, StarCitizen.LocalTelemetry.AnnunciatorState Hit, StarCitizen.LocalTelemetry.AnnunciatorState Missile) -> void
+StarCitizen.LocalTelemetry.Annunciators.Coolers.get -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.Annunciators.Coolers.init -> void
+StarCitizen.LocalTelemetry.Annunciators.Deconstruct(out StarCitizen.LocalTelemetry.AnnunciatorState Power, out StarCitizen.LocalTelemetry.AnnunciatorState Weapons, out StarCitizen.LocalTelemetry.AnnunciatorState Thrusters, out StarCitizen.LocalTelemetry.AnnunciatorState Shields, out StarCitizen.LocalTelemetry.AnnunciatorState Coolers, out StarCitizen.LocalTelemetry.AnnunciatorState QuantumDrive, out StarCitizen.LocalTelemetry.AnnunciatorState Radar, out StarCitizen.LocalTelemetry.AnnunciatorState Proximity, out StarCitizen.LocalTelemetry.AnnunciatorState Hit, out StarCitizen.LocalTelemetry.AnnunciatorState Missile) -> void
+StarCitizen.LocalTelemetry.Annunciators.Equals(StarCitizen.LocalTelemetry.Annunciators? other) -> bool
+StarCitizen.LocalTelemetry.Annunciators.Hit.get -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.Annunciators.Hit.init -> void
+StarCitizen.LocalTelemetry.Annunciators.Missile.get -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.Annunciators.Missile.init -> void
+StarCitizen.LocalTelemetry.Annunciators.Power.get -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.Annunciators.Power.init -> void
+StarCitizen.LocalTelemetry.Annunciators.Proximity.get -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.Annunciators.Proximity.init -> void
+StarCitizen.LocalTelemetry.Annunciators.QuantumDrive.get -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.Annunciators.QuantumDrive.init -> void
+StarCitizen.LocalTelemetry.Annunciators.Radar.get -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.Annunciators.Radar.init -> void
+StarCitizen.LocalTelemetry.Annunciators.Shields.get -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.Annunciators.Shields.init -> void
+StarCitizen.LocalTelemetry.Annunciators.Thrusters.get -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.Annunciators.Thrusters.init -> void
+StarCitizen.LocalTelemetry.Annunciators.Weapons.get -> StarCitizen.LocalTelemetry.AnnunciatorState
+StarCitizen.LocalTelemetry.Annunciators.Weapons.init -> void
+StarCitizen.LocalTelemetry.Availability
+StarCitizen.LocalTelemetry.Availability.<Clone>$() -> StarCitizen.LocalTelemetry.Availability!
+StarCitizen.LocalTelemetry.Availability.Active.get -> bool
+StarCitizen.LocalTelemetry.Availability.Active.init -> void
+StarCitizen.LocalTelemetry.Availability.Availability(bool Enabled, bool Active) -> void
+StarCitizen.LocalTelemetry.Availability.Deconstruct(out bool Enabled, out bool Active) -> void
+StarCitizen.LocalTelemetry.Availability.Enabled.get -> bool
+StarCitizen.LocalTelemetry.Availability.Enabled.init -> void
+StarCitizen.LocalTelemetry.Availability.Equals(StarCitizen.LocalTelemetry.Availability? other) -> bool
+StarCitizen.LocalTelemetry.AxisFeedback
+StarCitizen.LocalTelemetry.AxisFeedback.<Clone>$() -> StarCitizen.LocalTelemetry.AxisFeedback!
+StarCitizen.LocalTelemetry.AxisFeedback.AxisFeedback(float Resistance, float Damping) -> void
+StarCitizen.LocalTelemetry.AxisFeedback.Damping.get -> float
+StarCitizen.LocalTelemetry.AxisFeedback.Damping.init -> void
+StarCitizen.LocalTelemetry.AxisFeedback.Deconstruct(out float Resistance, out float Damping) -> void
+StarCitizen.LocalTelemetry.AxisFeedback.Equals(StarCitizen.LocalTelemetry.AxisFeedback? other) -> bool
+StarCitizen.LocalTelemetry.AxisFeedback.Resistance.get -> float
+StarCitizen.LocalTelemetry.AxisFeedback.Resistance.init -> void
+StarCitizen.LocalTelemetry.BoostStatus
+StarCitizen.LocalTelemetry.BoostStatus.<Clone>$() -> StarCitizen.LocalTelemetry.BoostStatus!
+StarCitizen.LocalTelemetry.BoostStatus.BoostStatus(bool Engaged, float Output, float Reserves, bool Critical) -> void
+StarCitizen.LocalTelemetry.BoostStatus.Critical.get -> bool
+StarCitizen.LocalTelemetry.BoostStatus.Critical.init -> void
+StarCitizen.LocalTelemetry.BoostStatus.Deconstruct(out bool Engaged, out float Output, out float Reserves, out bool Critical) -> void
+StarCitizen.LocalTelemetry.BoostStatus.Engaged.get -> bool
+StarCitizen.LocalTelemetry.BoostStatus.Engaged.init -> void
+StarCitizen.LocalTelemetry.BoostStatus.Equals(StarCitizen.LocalTelemetry.BoostStatus? other) -> bool
+StarCitizen.LocalTelemetry.BoostStatus.Output.get -> float
+StarCitizen.LocalTelemetry.BoostStatus.Output.init -> void
+StarCitizen.LocalTelemetry.BoostStatus.Reserves.get -> float
+StarCitizen.LocalTelemetry.BoostStatus.Reserves.init -> void
+StarCitizen.LocalTelemetry.Countermeasure
+StarCitizen.LocalTelemetry.Countermeasure.<Clone>$() -> StarCitizen.LocalTelemetry.Countermeasure!
+StarCitizen.LocalTelemetry.Countermeasure.Amount.get -> uint
+StarCitizen.LocalTelemetry.Countermeasure.Amount.init -> void
+StarCitizen.LocalTelemetry.Countermeasure.Countermeasure(StarCitizen.LocalTelemetry.CountermeasureType Type, uint Amount) -> void
+StarCitizen.LocalTelemetry.Countermeasure.Deconstruct(out StarCitizen.LocalTelemetry.CountermeasureType Type, out uint Amount) -> void
+StarCitizen.LocalTelemetry.Countermeasure.Equals(StarCitizen.LocalTelemetry.Countermeasure? other) -> bool
+StarCitizen.LocalTelemetry.Countermeasure.Type.get -> StarCitizen.LocalTelemetry.CountermeasureType
+StarCitizen.LocalTelemetry.Countermeasure.Type.init -> void
+StarCitizen.LocalTelemetry.CountermeasureType
+StarCitizen.LocalTelemetry.CountermeasureType.Decoy = 1 -> StarCitizen.LocalTelemetry.CountermeasureType
+StarCitizen.LocalTelemetry.CountermeasureType.Noise = 2 -> StarCitizen.LocalTelemetry.CountermeasureType
+StarCitizen.LocalTelemetry.CountermeasureType.Unknown = 0 -> StarCitizen.LocalTelemetry.CountermeasureType
+StarCitizen.LocalTelemetry.CrewRole
+StarCitizen.LocalTelemetry.CrewRole.Crew = 3 -> StarCitizen.LocalTelemetry.CrewRole
+StarCitizen.LocalTelemetry.CrewRole.Gunner = 2 -> StarCitizen.LocalTelemetry.CrewRole
+StarCitizen.LocalTelemetry.CrewRole.Pilot = 1 -> StarCitizen.LocalTelemetry.CrewRole
+StarCitizen.LocalTelemetry.CrewRole.Unknown = 0 -> StarCitizen.LocalTelemetry.CrewRole
+StarCitizen.LocalTelemetry.DeploymentState
+StarCitizen.LocalTelemetry.DeploymentState.Deployed = 3 -> StarCitizen.LocalTelemetry.DeploymentState
+StarCitizen.LocalTelemetry.DeploymentState.Deploying = 2 -> StarCitizen.LocalTelemetry.DeploymentState
+StarCitizen.LocalTelemetry.DeploymentState.Retracted = 1 -> StarCitizen.LocalTelemetry.DeploymentState
+StarCitizen.LocalTelemetry.DeploymentState.Retracting = 4 -> StarCitizen.LocalTelemetry.DeploymentState
+StarCitizen.LocalTelemetry.DeploymentState.Unknown = 0 -> StarCitizen.LocalTelemetry.DeploymentState
+StarCitizen.LocalTelemetry.DoorLockState
+StarCitizen.LocalTelemetry.DoorLockState.Locked = 2 -> StarCitizen.LocalTelemetry.DoorLockState
+StarCitizen.LocalTelemetry.DoorLockState.Unknown = 0 -> StarCitizen.LocalTelemetry.DoorLockState
+StarCitizen.LocalTelemetry.DoorLockState.Unlocked = 1 -> StarCitizen.LocalTelemetry.DoorLockState
+StarCitizen.LocalTelemetry.DoorOpenState
+StarCitizen.LocalTelemetry.DoorOpenState.Closed = 2 -> StarCitizen.LocalTelemetry.DoorOpenState
+StarCitizen.LocalTelemetry.DoorOpenState.Opened = 1 -> StarCitizen.LocalTelemetry.DoorOpenState
+StarCitizen.LocalTelemetry.DoorOpenState.Unknown = 0 -> StarCitizen.LocalTelemetry.DoorOpenState
+StarCitizen.LocalTelemetry.DoorStatus
+StarCitizen.LocalTelemetry.DoorStatus.<Clone>$() -> StarCitizen.LocalTelemetry.DoorStatus!
+StarCitizen.LocalTelemetry.DoorStatus.Deconstruct(out StarCitizen.LocalTelemetry.DoorOpenState OpenState, out StarCitizen.LocalTelemetry.DoorLockState LockState) -> void
+StarCitizen.LocalTelemetry.DoorStatus.DoorStatus(StarCitizen.LocalTelemetry.DoorOpenState OpenState, StarCitizen.LocalTelemetry.DoorLockState LockState) -> void
+StarCitizen.LocalTelemetry.DoorStatus.Equals(StarCitizen.LocalTelemetry.DoorStatus? other) -> bool
+StarCitizen.LocalTelemetry.DoorStatus.LockState.get -> StarCitizen.LocalTelemetry.DoorLockState
+StarCitizen.LocalTelemetry.DoorStatus.LockState.init -> void
+StarCitizen.LocalTelemetry.DoorStatus.OpenState.get -> StarCitizen.LocalTelemetry.DoorOpenState
+StarCitizen.LocalTelemetry.DoorStatus.OpenState.init -> void
+StarCitizen.LocalTelemetry.FeedbackAxes
+StarCitizen.LocalTelemetry.FeedbackAxes.<Clone>$() -> StarCitizen.LocalTelemetry.FeedbackAxes!
+StarCitizen.LocalTelemetry.FeedbackAxes.Deconstruct(out StarCitizen.LocalTelemetry.AxisFeedback? X, out StarCitizen.LocalTelemetry.AxisFeedback? Y, out StarCitizen.LocalTelemetry.AxisFeedback? Z) -> void
+StarCitizen.LocalTelemetry.FeedbackAxes.Equals(StarCitizen.LocalTelemetry.FeedbackAxes? other) -> bool
+StarCitizen.LocalTelemetry.FeedbackAxes.FeedbackAxes(StarCitizen.LocalTelemetry.AxisFeedback? X, StarCitizen.LocalTelemetry.AxisFeedback? Y, StarCitizen.LocalTelemetry.AxisFeedback? Z) -> void
+StarCitizen.LocalTelemetry.FeedbackAxes.X.get -> StarCitizen.LocalTelemetry.AxisFeedback?
+StarCitizen.LocalTelemetry.FeedbackAxes.X.init -> void
+StarCitizen.LocalTelemetry.FeedbackAxes.Y.get -> StarCitizen.LocalTelemetry.AxisFeedback?
+StarCitizen.LocalTelemetry.FeedbackAxes.Y.init -> void
+StarCitizen.LocalTelemetry.FeedbackAxes.Z.get -> StarCitizen.LocalTelemetry.AxisFeedback?
+StarCitizen.LocalTelemetry.FeedbackAxes.Z.init -> void
+StarCitizen.LocalTelemetry.FlightInstruments
+StarCitizen.LocalTelemetry.FlightInstruments.<Clone>$() -> StarCitizen.LocalTelemetry.FlightInstruments!
+StarCitizen.LocalTelemetry.FlightInstruments.Altitude.get -> float?
+StarCitizen.LocalTelemetry.FlightInstruments.Altitude.init -> void
+StarCitizen.LocalTelemetry.FlightInstruments.AtmosphericDensity.get -> float
+StarCitizen.LocalTelemetry.FlightInstruments.AtmosphericDensity.init -> void
+StarCitizen.LocalTelemetry.FlightInstruments.Boost.get -> StarCitizen.LocalTelemetry.BoostStatus?
+StarCitizen.LocalTelemetry.FlightInstruments.Boost.init -> void
+StarCitizen.LocalTelemetry.FlightInstruments.Deconstruct(out float Speed, out float HydrogenFuel, out float QuantumFuel, out StarCitizen.LocalTelemetry.Gauge? GMeter, out StarCitizen.LocalTelemetry.BoostStatus? Boost, out float? Altitude, out float? RadarAltitude, out float VerticalSpeed, out float AtmosphericDensity, out float Heading) -> void
+StarCitizen.LocalTelemetry.FlightInstruments.Equals(StarCitizen.LocalTelemetry.FlightInstruments? other) -> bool
+StarCitizen.LocalTelemetry.FlightInstruments.FlightInstruments(float Speed, float HydrogenFuel, float QuantumFuel, StarCitizen.LocalTelemetry.Gauge? GMeter, StarCitizen.LocalTelemetry.BoostStatus? Boost, float? Altitude, float? RadarAltitude, float VerticalSpeed, float AtmosphericDensity, float Heading) -> void
+StarCitizen.LocalTelemetry.FlightInstruments.GMeter.get -> StarCitizen.LocalTelemetry.Gauge?
+StarCitizen.LocalTelemetry.FlightInstruments.GMeter.init -> void
+StarCitizen.LocalTelemetry.FlightInstruments.Heading.get -> float
+StarCitizen.LocalTelemetry.FlightInstruments.Heading.init -> void
+StarCitizen.LocalTelemetry.FlightInstruments.HydrogenFuel.get -> float
+StarCitizen.LocalTelemetry.FlightInstruments.HydrogenFuel.init -> void
+StarCitizen.LocalTelemetry.FlightInstruments.QuantumFuel.get -> float
+StarCitizen.LocalTelemetry.FlightInstruments.QuantumFuel.init -> void
+StarCitizen.LocalTelemetry.FlightInstruments.RadarAltitude.get -> float?
+StarCitizen.LocalTelemetry.FlightInstruments.RadarAltitude.init -> void
+StarCitizen.LocalTelemetry.FlightInstruments.Speed.get -> float
+StarCitizen.LocalTelemetry.FlightInstruments.Speed.init -> void
+StarCitizen.LocalTelemetry.FlightInstruments.VerticalSpeed.get -> float
+StarCitizen.LocalTelemetry.FlightInstruments.VerticalSpeed.init -> void
+StarCitizen.LocalTelemetry.FlightSettings
+StarCitizen.LocalTelemetry.FlightSettings.<Clone>$() -> StarCitizen.LocalTelemetry.FlightSettings!
+StarCitizen.LocalTelemetry.FlightSettings.AdvancedHudLabels.get -> bool
+StarCitizen.LocalTelemetry.FlightSettings.AdvancedHudLabels.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.AdvancedHudNav.get -> bool
+StarCitizen.LocalTelemetry.FlightSettings.AdvancedHudNav.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.AdvancedHudScm.get -> bool
+StarCitizen.LocalTelemetry.FlightSettings.AdvancedHudScm.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.CommandBehaviour.get -> StarCitizen.LocalTelemetry.Availability?
+StarCitizen.LocalTelemetry.FlightSettings.CommandBehaviour.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.Core.get -> StarCitizen.LocalTelemetry.Availability?
+StarCitizen.LocalTelemetry.FlightSettings.Core.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.Coupled.get -> StarCitizen.LocalTelemetry.Availability?
+StarCitizen.LocalTelemetry.FlightSettings.Coupled.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.CoursePrediction.get -> bool
+StarCitizen.LocalTelemetry.FlightSettings.CoursePrediction.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.CruiseMode.get -> StarCitizen.LocalTelemetry.Availability?
+StarCitizen.LocalTelemetry.FlightSettings.CruiseMode.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.Deconstruct(out StarCitizen.LocalTelemetry.Availability? Coupled, out StarCitizen.LocalTelemetry.Availability? Esp, out StarCitizen.LocalTelemetry.Availability? GravityCompensation, out StarCitizen.LocalTelemetry.Availability? GSafe, out StarCitizen.LocalTelemetry.Availability? CruiseMode, out bool SpacebrakeEnablesBoost, out StarCitizen.LocalTelemetry.Availability? SpeedLimiter, out StarCitizen.LocalTelemetry.Availability? ProximityAssist, out StarCitizen.LocalTelemetry.Availability? ProximityAssistLanding, out StarCitizen.LocalTelemetry.Availability? Stability, out StarCitizen.LocalTelemetry.Availability? Core, out bool AdvancedHudScm, out bool AdvancedHudNav, out bool AdvancedHudLabels, out bool CoursePrediction, out StarCitizen.LocalTelemetry.Availability? WindCompensation, out bool GSafeDisabledByBoost, out StarCitizen.LocalTelemetry.Availability? CommandBehaviour, out bool LightAmplification) -> void
+StarCitizen.LocalTelemetry.FlightSettings.Equals(StarCitizen.LocalTelemetry.FlightSettings? other) -> bool
+StarCitizen.LocalTelemetry.FlightSettings.Esp.get -> StarCitizen.LocalTelemetry.Availability?
+StarCitizen.LocalTelemetry.FlightSettings.Esp.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.FlightSettings(StarCitizen.LocalTelemetry.Availability? Coupled, StarCitizen.LocalTelemetry.Availability? Esp, StarCitizen.LocalTelemetry.Availability? GravityCompensation, StarCitizen.LocalTelemetry.Availability? GSafe, StarCitizen.LocalTelemetry.Availability? CruiseMode, bool SpacebrakeEnablesBoost, StarCitizen.LocalTelemetry.Availability? SpeedLimiter, StarCitizen.LocalTelemetry.Availability? ProximityAssist, StarCitizen.LocalTelemetry.Availability? ProximityAssistLanding, StarCitizen.LocalTelemetry.Availability? Stability, StarCitizen.LocalTelemetry.Availability? Core, bool AdvancedHudScm, bool AdvancedHudNav, bool AdvancedHudLabels, bool CoursePrediction, StarCitizen.LocalTelemetry.Availability? WindCompensation, bool GSafeDisabledByBoost, StarCitizen.LocalTelemetry.Availability? CommandBehaviour, bool LightAmplification) -> void
+StarCitizen.LocalTelemetry.FlightSettings.GSafe.get -> StarCitizen.LocalTelemetry.Availability?
+StarCitizen.LocalTelemetry.FlightSettings.GSafe.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.GSafeDisabledByBoost.get -> bool
+StarCitizen.LocalTelemetry.FlightSettings.GSafeDisabledByBoost.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.GravityCompensation.get -> StarCitizen.LocalTelemetry.Availability?
+StarCitizen.LocalTelemetry.FlightSettings.GravityCompensation.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.LightAmplification.get -> bool
+StarCitizen.LocalTelemetry.FlightSettings.LightAmplification.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.ProximityAssist.get -> StarCitizen.LocalTelemetry.Availability?
+StarCitizen.LocalTelemetry.FlightSettings.ProximityAssist.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.ProximityAssistLanding.get -> StarCitizen.LocalTelemetry.Availability?
+StarCitizen.LocalTelemetry.FlightSettings.ProximityAssistLanding.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.SpacebrakeEnablesBoost.get -> bool
+StarCitizen.LocalTelemetry.FlightSettings.SpacebrakeEnablesBoost.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.SpeedLimiter.get -> StarCitizen.LocalTelemetry.Availability?
+StarCitizen.LocalTelemetry.FlightSettings.SpeedLimiter.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.Stability.get -> StarCitizen.LocalTelemetry.Availability?
+StarCitizen.LocalTelemetry.FlightSettings.Stability.init -> void
+StarCitizen.LocalTelemetry.FlightSettings.WindCompensation.get -> StarCitizen.LocalTelemetry.Availability?
+StarCitizen.LocalTelemetry.FlightSettings.WindCompensation.init -> void
+StarCitizen.LocalTelemetry.FlightTelemetry
+StarCitizen.LocalTelemetry.FlightTelemetry.<Clone>$() -> StarCitizen.LocalTelemetry.FlightTelemetry!
+StarCitizen.LocalTelemetry.FlightTelemetry.Deconstruct(out bool IsLanded, out StarCitizen.LocalTelemetry.DeploymentState? LandingGear, out StarCitizen.LocalTelemetry.DeploymentState? Vtol, out StarCitizen.LocalTelemetry.DeploymentState? Transformation, out StarCitizen.LocalTelemetry.FlightSettings? Settings, out StarCitizen.LocalTelemetry.FlightInstruments? Instruments) -> void
+StarCitizen.LocalTelemetry.FlightTelemetry.Equals(StarCitizen.LocalTelemetry.FlightTelemetry? other) -> bool
+StarCitizen.LocalTelemetry.FlightTelemetry.FlightTelemetry(bool IsLanded, StarCitizen.LocalTelemetry.DeploymentState? LandingGear, StarCitizen.LocalTelemetry.DeploymentState? Vtol, StarCitizen.LocalTelemetry.DeploymentState? Transformation, StarCitizen.LocalTelemetry.FlightSettings? Settings, StarCitizen.LocalTelemetry.FlightInstruments? Instruments) -> void
+StarCitizen.LocalTelemetry.FlightTelemetry.Instruments.get -> StarCitizen.LocalTelemetry.FlightInstruments?
+StarCitizen.LocalTelemetry.FlightTelemetry.Instruments.init -> void
+StarCitizen.LocalTelemetry.FlightTelemetry.IsLanded.get -> bool
+StarCitizen.LocalTelemetry.FlightTelemetry.IsLanded.init -> void
+StarCitizen.LocalTelemetry.FlightTelemetry.LandingGear.get -> StarCitizen.LocalTelemetry.DeploymentState?
+StarCitizen.LocalTelemetry.FlightTelemetry.LandingGear.init -> void
+StarCitizen.LocalTelemetry.FlightTelemetry.Settings.get -> StarCitizen.LocalTelemetry.FlightSettings?
+StarCitizen.LocalTelemetry.FlightTelemetry.Settings.init -> void
+StarCitizen.LocalTelemetry.FlightTelemetry.Transformation.get -> StarCitizen.LocalTelemetry.DeploymentState?
+StarCitizen.LocalTelemetry.FlightTelemetry.Transformation.init -> void
+StarCitizen.LocalTelemetry.FlightTelemetry.Vtol.get -> StarCitizen.LocalTelemetry.DeploymentState?
+StarCitizen.LocalTelemetry.FlightTelemetry.Vtol.init -> void
+StarCitizen.LocalTelemetry.ForceFeedbackTelemetry
+StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.<Clone>$() -> StarCitizen.LocalTelemetry.ForceFeedbackTelemetry!
+StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.Angular.get -> StarCitizen.LocalTelemetry.FeedbackAxes?
+StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.Angular.init -> void
+StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.Deconstruct(out StarCitizen.LocalTelemetry.FeedbackAxes? Angular, out StarCitizen.LocalTelemetry.FeedbackAxes? Linear, out float Gunfire, out float StickShaker) -> void
+StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.Equals(StarCitizen.LocalTelemetry.ForceFeedbackTelemetry? other) -> bool
+StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.ForceFeedbackTelemetry(StarCitizen.LocalTelemetry.FeedbackAxes? Angular, StarCitizen.LocalTelemetry.FeedbackAxes? Linear, float Gunfire, float StickShaker) -> void
+StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.Gunfire.get -> float
+StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.Gunfire.init -> void
+StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.Linear.get -> StarCitizen.LocalTelemetry.FeedbackAxes?
+StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.Linear.init -> void
+StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.StickShaker.get -> float
+StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.StickShaker.init -> void
+StarCitizen.LocalTelemetry.GameAction
+StarCitizen.LocalTelemetry.GameAction.<Clone>$() -> StarCitizen.LocalTelemetry.GameAction!
+StarCitizen.LocalTelemetry.GameAction.Category.get -> string!
+StarCitizen.LocalTelemetry.GameAction.Category.init -> void
+StarCitizen.LocalTelemetry.GameAction.Deconstruct(out string! Name, out string! Category, out bool Holdable) -> void
+StarCitizen.LocalTelemetry.GameAction.Equals(StarCitizen.LocalTelemetry.GameAction? other) -> bool
+StarCitizen.LocalTelemetry.GameAction.GameAction(string! Name, string! Category, bool Holdable) -> void
+StarCitizen.LocalTelemetry.GameAction.Holdable.get -> bool
+StarCitizen.LocalTelemetry.GameAction.Holdable.init -> void
+StarCitizen.LocalTelemetry.GameAction.Name.get -> string!
+StarCitizen.LocalTelemetry.GameAction.Name.init -> void
+StarCitizen.LocalTelemetry.GameActionExtensions
+StarCitizen.LocalTelemetry.GameActions
+StarCitizen.LocalTelemetry.GameActions.LightsController
+StarCitizen.LocalTelemetry.GameActions.Player
+StarCitizen.LocalTelemetry.GameActions.PlayerEmotes
+StarCitizen.LocalTelemetry.GameActions.SeatGeneral
+StarCitizen.LocalTelemetry.GameActions.SpaceshipDocking
+StarCitizen.LocalTelemetry.GameActions.SpaceshipGeneral
+StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement
+StarCitizen.LocalTelemetry.GameActions.SpaceshipPower
+StarCitizen.LocalTelemetry.GameActions.SpaceshipQuantum
+StarCitizen.LocalTelemetry.GameActions.SpaceshipRadar
+StarCitizen.LocalTelemetry.GameActions.SpaceshipTargetHailing
+StarCitizen.LocalTelemetry.GameEventType
+StarCitizen.LocalTelemetry.GameEventType.ActorDead = 2 -> StarCitizen.LocalTelemetry.GameEventType
+StarCitizen.LocalTelemetry.GameEventType.ActorDowned = 6 -> StarCitizen.LocalTelemetry.GameEventType
+StarCitizen.LocalTelemetry.GameEventType.ActorEnterSeat = 3 -> StarCitizen.LocalTelemetry.GameEventType
+StarCitizen.LocalTelemetry.GameEventType.ActorLeaveSeat = 4 -> StarCitizen.LocalTelemetry.GameEventType
+StarCitizen.LocalTelemetry.GameEventType.ActorRespawn = 5 -> StarCitizen.LocalTelemetry.GameEventType
+StarCitizen.LocalTelemetry.GameEventType.ActorSpawn = 1 -> StarCitizen.LocalTelemetry.GameEventType
+StarCitizen.LocalTelemetry.GameEventType.Unknown = 0 -> StarCitizen.LocalTelemetry.GameEventType
+StarCitizen.LocalTelemetry.GameVersionCheck
+StarCitizen.LocalTelemetry.GameVersionCheck.<Clone>$() -> StarCitizen.LocalTelemetry.GameVersionCheck!
+StarCitizen.LocalTelemetry.GameVersionCheck.BundledGameVersion.get -> System.Version!
+StarCitizen.LocalTelemetry.GameVersionCheck.BundledGameVersion.init -> void
+StarCitizen.LocalTelemetry.GameVersionCheck.Deconstruct(out System.Version! BundledGameVersion, out System.Version? GameVersion) -> void
+StarCitizen.LocalTelemetry.GameVersionCheck.Equals(StarCitizen.LocalTelemetry.GameVersionCheck? other) -> bool
+StarCitizen.LocalTelemetry.GameVersionCheck.GameVersion.get -> System.Version?
+StarCitizen.LocalTelemetry.GameVersionCheck.GameVersion.init -> void
+StarCitizen.LocalTelemetry.GameVersionCheck.GameVersionCheck(System.Version! BundledGameVersion, System.Version? GameVersion) -> void
+StarCitizen.LocalTelemetry.GameVersionCheck.IsMatch.get -> bool
+StarCitizen.LocalTelemetry.Gauge
+StarCitizen.LocalTelemetry.Gauge.<Clone>$() -> StarCitizen.LocalTelemetry.Gauge!
+StarCitizen.LocalTelemetry.Gauge.Current.get -> float
+StarCitizen.LocalTelemetry.Gauge.Current.init -> void
+StarCitizen.LocalTelemetry.Gauge.Deconstruct(out float Current, out float Max) -> void
+StarCitizen.LocalTelemetry.Gauge.Equals(StarCitizen.LocalTelemetry.Gauge? other) -> bool
+StarCitizen.LocalTelemetry.Gauge.Fraction.get -> float?
+StarCitizen.LocalTelemetry.Gauge.Gauge(float Current, float Max) -> void
+StarCitizen.LocalTelemetry.Gauge.Max.get -> float
+StarCitizen.LocalTelemetry.Gauge.Max.init -> void
+StarCitizen.LocalTelemetry.ITelemetryClient
+StarCitizen.LocalTelemetry.ITelemetryClient.GetActionsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<StarCitizen.LocalTelemetry.GameAction!>!>!
+StarCitizen.LocalTelemetry.ITelemetryClient.ObserveTelemetryAsync(System.TimeSpan? retryDelay = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Collections.Generic.IAsyncEnumerable<StarCitizen.LocalTelemetry.TelemetryStreamEvent!>!
+StarCitizen.LocalTelemetry.ITelemetryClient.ReadTelemetryAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Collections.Generic.IAsyncEnumerable<StarCitizen.LocalTelemetry.TelemetryFrame!>!
+StarCitizen.LocalTelemetry.ITelemetryClient.TriggerActionAsync(string! actionName, System.TimeSpan? hold = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+StarCitizen.LocalTelemetry.LocomotionState
+StarCitizen.LocalTelemetry.LocomotionState.Eva = 2 -> StarCitizen.LocalTelemetry.LocomotionState
+StarCitizen.LocalTelemetry.LocomotionState.OnFoot = 1 -> StarCitizen.LocalTelemetry.LocomotionState
+StarCitizen.LocalTelemetry.LocomotionState.Seated = 3 -> StarCitizen.LocalTelemetry.LocomotionState
+StarCitizen.LocalTelemetry.LocomotionState.Unknown = 0 -> StarCitizen.LocalTelemetry.LocomotionState
+StarCitizen.LocalTelemetry.MasterMode
+StarCitizen.LocalTelemetry.MasterMode.Navigation = 1 -> StarCitizen.LocalTelemetry.MasterMode
+StarCitizen.LocalTelemetry.MasterMode.Scm = 2 -> StarCitizen.LocalTelemetry.MasterMode
+StarCitizen.LocalTelemetry.MasterMode.Stealth = 3 -> StarCitizen.LocalTelemetry.MasterMode
+StarCitizen.LocalTelemetry.MasterMode.Unknown = 0 -> StarCitizen.LocalTelemetry.MasterMode
+StarCitizen.LocalTelemetry.MasterModeStatus
+StarCitizen.LocalTelemetry.MasterModeStatus.<Clone>$() -> StarCitizen.LocalTelemetry.MasterModeStatus!
+StarCitizen.LocalTelemetry.MasterModeStatus.Deconstruct(out StarCitizen.LocalTelemetry.MasterMode Mode, out bool Spooled) -> void
+StarCitizen.LocalTelemetry.MasterModeStatus.Equals(StarCitizen.LocalTelemetry.MasterModeStatus? other) -> bool
+StarCitizen.LocalTelemetry.MasterModeStatus.MasterModeStatus(StarCitizen.LocalTelemetry.MasterMode Mode, bool Spooled) -> void
+StarCitizen.LocalTelemetry.MasterModeStatus.Mode.get -> StarCitizen.LocalTelemetry.MasterMode
+StarCitizen.LocalTelemetry.MasterModeStatus.Mode.init -> void
+StarCitizen.LocalTelemetry.MasterModeStatus.Spooled.get -> bool
+StarCitizen.LocalTelemetry.MasterModeStatus.Spooled.init -> void
+StarCitizen.LocalTelemetry.PowerStatus
+StarCitizen.LocalTelemetry.PowerStatus.<Clone>$() -> StarCitizen.LocalTelemetry.PowerStatus!
+StarCitizen.LocalTelemetry.PowerStatus.Coolers.get -> bool
+StarCitizen.LocalTelemetry.PowerStatus.Coolers.init -> void
+StarCitizen.LocalTelemetry.PowerStatus.Deconstruct(out bool Powerplants, out bool Engines, out bool Weapons, out bool Coolers, out bool LifeSupport, out bool GravityGenerators, out bool Sensors, out bool ShieldGenerators, out bool ShieldEmitters) -> void
+StarCitizen.LocalTelemetry.PowerStatus.Engines.get -> bool
+StarCitizen.LocalTelemetry.PowerStatus.Engines.init -> void
+StarCitizen.LocalTelemetry.PowerStatus.Equals(StarCitizen.LocalTelemetry.PowerStatus? other) -> bool
+StarCitizen.LocalTelemetry.PowerStatus.GravityGenerators.get -> bool
+StarCitizen.LocalTelemetry.PowerStatus.GravityGenerators.init -> void
+StarCitizen.LocalTelemetry.PowerStatus.LifeSupport.get -> bool
+StarCitizen.LocalTelemetry.PowerStatus.LifeSupport.init -> void
+StarCitizen.LocalTelemetry.PowerStatus.PowerStatus(bool Powerplants, bool Engines, bool Weapons, bool Coolers, bool LifeSupport, bool GravityGenerators, bool Sensors, bool ShieldGenerators, bool ShieldEmitters) -> void
+StarCitizen.LocalTelemetry.PowerStatus.Powerplants.get -> bool
+StarCitizen.LocalTelemetry.PowerStatus.Powerplants.init -> void
+StarCitizen.LocalTelemetry.PowerStatus.Sensors.get -> bool
+StarCitizen.LocalTelemetry.PowerStatus.Sensors.init -> void
+StarCitizen.LocalTelemetry.PowerStatus.ShieldEmitters.get -> bool
+StarCitizen.LocalTelemetry.PowerStatus.ShieldEmitters.init -> void
+StarCitizen.LocalTelemetry.PowerStatus.ShieldGenerators.get -> bool
+StarCitizen.LocalTelemetry.PowerStatus.ShieldGenerators.init -> void
+StarCitizen.LocalTelemetry.PowerStatus.Weapons.get -> bool
+StarCitizen.LocalTelemetry.PowerStatus.Weapons.init -> void
+StarCitizen.LocalTelemetry.SchemaMismatch
+StarCitizen.LocalTelemetry.SchemaMismatch.<Clone>$() -> StarCitizen.LocalTelemetry.SchemaMismatch!
+StarCitizen.LocalTelemetry.SchemaMismatch.Deconstruct(out StarCitizen.LocalTelemetry.SchemaMismatchKind Kind, out string! Path, out long Number) -> void
+StarCitizen.LocalTelemetry.SchemaMismatch.Equals(StarCitizen.LocalTelemetry.SchemaMismatch? other) -> bool
+StarCitizen.LocalTelemetry.SchemaMismatch.Kind.get -> StarCitizen.LocalTelemetry.SchemaMismatchKind
+StarCitizen.LocalTelemetry.SchemaMismatch.Kind.init -> void
+StarCitizen.LocalTelemetry.SchemaMismatch.Number.get -> long
+StarCitizen.LocalTelemetry.SchemaMismatch.Number.init -> void
+StarCitizen.LocalTelemetry.SchemaMismatch.Path.get -> string!
+StarCitizen.LocalTelemetry.SchemaMismatch.Path.init -> void
+StarCitizen.LocalTelemetry.SchemaMismatch.SchemaMismatch(StarCitizen.LocalTelemetry.SchemaMismatchKind Kind, string! Path, long Number) -> void
+StarCitizen.LocalTelemetry.SchemaMismatchKind
+StarCitizen.LocalTelemetry.SchemaMismatchKind.ChangedFieldType = 2 -> StarCitizen.LocalTelemetry.SchemaMismatchKind
+StarCitizen.LocalTelemetry.SchemaMismatchKind.UnknownEnumValue = 1 -> StarCitizen.LocalTelemetry.SchemaMismatchKind
+StarCitizen.LocalTelemetry.SchemaMismatchKind.UnknownField = 0 -> StarCitizen.LocalTelemetry.SchemaMismatchKind
+StarCitizen.LocalTelemetry.Setup.GameChannel
+StarCitizen.LocalTelemetry.Setup.GameChannel.<Clone>$() -> StarCitizen.LocalTelemetry.Setup.GameChannel!
+StarCitizen.LocalTelemetry.Setup.GameChannel.Deconstruct(out string! Name, out string! FolderPath, out string? Version) -> void
+StarCitizen.LocalTelemetry.Setup.GameChannel.Equals(StarCitizen.LocalTelemetry.Setup.GameChannel? other) -> bool
+StarCitizen.LocalTelemetry.Setup.GameChannel.ExecutablePath.get -> string!
+StarCitizen.LocalTelemetry.Setup.GameChannel.FolderPath.get -> string!
+StarCitizen.LocalTelemetry.Setup.GameChannel.FolderPath.init -> void
+StarCitizen.LocalTelemetry.Setup.GameChannel.GameChannel(string! Name, string! FolderPath, string? Version) -> void
+StarCitizen.LocalTelemetry.Setup.GameChannel.Name.get -> string!
+StarCitizen.LocalTelemetry.Setup.GameChannel.Name.init -> void
+StarCitizen.LocalTelemetry.Setup.GameChannel.UserCfgPath.get -> string!
+StarCitizen.LocalTelemetry.Setup.GameChannel.Version.get -> string?
+StarCitizen.LocalTelemetry.Setup.GameChannel.Version.init -> void
+StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation
+StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation.<Clone>$() -> StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation!
+StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation.Channels.get -> System.Collections.Generic.IReadOnlyList<StarCitizen.LocalTelemetry.Setup.GameChannel!>!
+StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation.Channels.init -> void
+StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation.Deconstruct(out string! RootPath, out System.Collections.Generic.IReadOnlyList<StarCitizen.LocalTelemetry.Setup.GameChannel!>! Channels) -> void
+StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation.Equals(StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation? other) -> bool
+StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation.FindChannel(string! name) -> StarCitizen.LocalTelemetry.Setup.GameChannel?
+StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation.RootPath.get -> string!
+StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation.RootPath.init -> void
+StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation.StarCitizenInstallation(string! RootPath, System.Collections.Generic.IReadOnlyList<StarCitizen.LocalTelemetry.Setup.GameChannel!>! Channels) -> void
+StarCitizen.LocalTelemetry.Setup.StarCitizenLocator
+StarCitizen.LocalTelemetry.Setup.TelemetrySetup
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult.<Clone>$() -> StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult!
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult.BackupPath.get -> string?
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult.BackupPath.init -> void
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult.Deconstruct(out bool EnvironmentVariableChanged, out bool UserCfgChanged, out string? BackupPath) -> void
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult.EnvironmentVariableChanged.get -> bool
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult.EnvironmentVariableChanged.init -> void
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult.Equals(StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult? other) -> bool
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult.RestartRequired.get -> bool
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult.TelemetrySetupResult(bool EnvironmentVariableChanged, bool UserCfgChanged, string? BackupPath) -> void
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult.UserCfgChanged.get -> bool
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult.UserCfgChanged.init -> void
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus.<Clone>$() -> StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus!
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus.Channel.get -> StarCitizen.LocalTelemetry.Setup.GameChannel!
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus.Channel.init -> void
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus.Deconstruct(out StarCitizen.LocalTelemetry.Setup.GameChannel! Channel, out bool EnvironmentVariableEnabled, out bool? UserCfgEnabled) -> void
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus.EnvironmentVariableEnabled.get -> bool
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus.EnvironmentVariableEnabled.init -> void
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus.Equals(StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus? other) -> bool
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus.IsEnabled.get -> bool
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus.TelemetrySetupStatus(StarCitizen.LocalTelemetry.Setup.GameChannel! Channel, bool EnvironmentVariableEnabled, bool? UserCfgEnabled) -> void
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus.UserCfgEnabled.get -> bool?
+StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus.UserCfgEnabled.init -> void
+StarCitizen.LocalTelemetry.Setup.UserCfgChange
+StarCitizen.LocalTelemetry.Setup.UserCfgChange.<Clone>$() -> StarCitizen.LocalTelemetry.Setup.UserCfgChange!
+StarCitizen.LocalTelemetry.Setup.UserCfgChange.BackupPath.get -> string?
+StarCitizen.LocalTelemetry.Setup.UserCfgChange.BackupPath.init -> void
+StarCitizen.LocalTelemetry.Setup.UserCfgChange.Changed.get -> bool
+StarCitizen.LocalTelemetry.Setup.UserCfgChange.Changed.init -> void
+StarCitizen.LocalTelemetry.Setup.UserCfgChange.Deconstruct(out bool Changed, out string? BackupPath) -> void
+StarCitizen.LocalTelemetry.Setup.UserCfgChange.Equals(StarCitizen.LocalTelemetry.Setup.UserCfgChange? other) -> bool
+StarCitizen.LocalTelemetry.Setup.UserCfgChange.UserCfgChange(bool Changed, string? BackupPath) -> void
+StarCitizen.LocalTelemetry.ShieldStatus
+StarCitizen.LocalTelemetry.ShieldStatus.<Clone>$() -> StarCitizen.LocalTelemetry.ShieldStatus!
+StarCitizen.LocalTelemetry.ShieldStatus.Deconstruct(out float Level, out StarCitizen.LocalTelemetry.ValueList<float>! Faces) -> void
+StarCitizen.LocalTelemetry.ShieldStatus.Equals(StarCitizen.LocalTelemetry.ShieldStatus? other) -> bool
+StarCitizen.LocalTelemetry.ShieldStatus.Faces.get -> StarCitizen.LocalTelemetry.ValueList<float>!
+StarCitizen.LocalTelemetry.ShieldStatus.Faces.init -> void
+StarCitizen.LocalTelemetry.ShieldStatus.Level.get -> float
+StarCitizen.LocalTelemetry.ShieldStatus.Level.init -> void
+StarCitizen.LocalTelemetry.ShieldStatus.ShieldStatus(float Level, StarCitizen.LocalTelemetry.ValueList<float>! Faces) -> void
+StarCitizen.LocalTelemetry.StarCitizenTelemetryClient
+StarCitizen.LocalTelemetry.StarCitizenTelemetryClient.Dispose() -> void
+StarCitizen.LocalTelemetry.StarCitizenTelemetryClient.GetActionsAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<StarCitizen.LocalTelemetry.GameAction!>!>!
+StarCitizen.LocalTelemetry.StarCitizenTelemetryClient.ObserveTelemetryAsync(System.TimeSpan? retryDelay = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Collections.Generic.IAsyncEnumerable<StarCitizen.LocalTelemetry.TelemetryStreamEvent!>!
+StarCitizen.LocalTelemetry.StarCitizenTelemetryClient.ReadTelemetryAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Collections.Generic.IAsyncEnumerable<StarCitizen.LocalTelemetry.TelemetryFrame!>!
+StarCitizen.LocalTelemetry.StarCitizenTelemetryClient.SchemaMismatches.get -> System.Collections.Generic.IReadOnlyCollection<StarCitizen.LocalTelemetry.SchemaMismatch!>!
+StarCitizen.LocalTelemetry.StarCitizenTelemetryClient.StarCitizenTelemetryClient() -> void
+StarCitizen.LocalTelemetry.StarCitizenTelemetryClient.StarCitizenTelemetryClient(StarCitizen.LocalTelemetry.StarCitizenTelemetryOptions! options, Microsoft.Extensions.Logging.ILogger? logger) -> void
+StarCitizen.LocalTelemetry.StarCitizenTelemetryClient.StarCitizenTelemetryClient(System.Uri? address) -> void
+StarCitizen.LocalTelemetry.StarCitizenTelemetryClient.TriggerActionAsync(string! actionName, System.TimeSpan? hold = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+StarCitizen.LocalTelemetry.StarCitizenTelemetryOptions
+StarCitizen.LocalTelemetry.StarCitizenTelemetryOptions.Address.get -> System.Uri!
+StarCitizen.LocalTelemetry.StarCitizenTelemetryOptions.Address.set -> void
+StarCitizen.LocalTelemetry.StarCitizenTelemetryOptions.DetectSchemaMismatches.get -> bool
+StarCitizen.LocalTelemetry.StarCitizenTelemetryOptions.DetectSchemaMismatches.set -> void
+StarCitizen.LocalTelemetry.StarCitizenTelemetryOptions.RetryDelay.get -> System.TimeSpan
+StarCitizen.LocalTelemetry.StarCitizenTelemetryOptions.RetryDelay.set -> void
+StarCitizen.LocalTelemetry.StarCitizenTelemetryOptions.StarCitizenTelemetryOptions() -> void
+StarCitizen.LocalTelemetry.TelemetryChange
+StarCitizen.LocalTelemetry.TelemetryChange.<Clone>$() -> StarCitizen.LocalTelemetry.TelemetryChange!
+StarCitizen.LocalTelemetry.TelemetryChange.Deconstruct(out StarCitizen.LocalTelemetry.TelemetrySections Sections, out StarCitizen.LocalTelemetry.TelemetryFrame! Frame) -> void
+StarCitizen.LocalTelemetry.TelemetryChange.Equals(StarCitizen.LocalTelemetry.TelemetryChange? other) -> bool
+StarCitizen.LocalTelemetry.TelemetryChange.Frame.get -> StarCitizen.LocalTelemetry.TelemetryFrame!
+StarCitizen.LocalTelemetry.TelemetryChange.Frame.init -> void
+StarCitizen.LocalTelemetry.TelemetryChange.Sections.get -> StarCitizen.LocalTelemetry.TelemetrySections
+StarCitizen.LocalTelemetry.TelemetryChange.Sections.init -> void
+StarCitizen.LocalTelemetry.TelemetryChange.TelemetryChange(StarCitizen.LocalTelemetry.TelemetrySections Sections, StarCitizen.LocalTelemetry.TelemetryFrame! Frame) -> void
+StarCitizen.LocalTelemetry.TelemetryClientExtensions
+StarCitizen.LocalTelemetry.TelemetryFrame
+StarCitizen.LocalTelemetry.TelemetryFrame.<Clone>$() -> StarCitizen.LocalTelemetry.TelemetryFrame!
+StarCitizen.LocalTelemetry.TelemetryFrame.Actor.get -> StarCitizen.LocalTelemetry.ActorTelemetry?
+StarCitizen.LocalTelemetry.TelemetryFrame.Actor.init -> void
+StarCitizen.LocalTelemetry.TelemetryFrame.Deconstruct(out System.DateTimeOffset ReceivedAt, out StarCitizen.LocalTelemetry.VehicleTelemetry? Vehicle, out StarCitizen.LocalTelemetry.WeaponsTelemetry? Weapons, out StarCitizen.LocalTelemetry.ValueList<StarCitizen.LocalTelemetry.GameEventType>! Events, out StarCitizen.LocalTelemetry.ActorTelemetry? Actor, out StarCitizen.LocalTelemetry.ForceFeedbackTelemetry? ForceFeedback, out StarCitizen.LocalTelemetry.TurretTelemetry? Turret) -> void
+StarCitizen.LocalTelemetry.TelemetryFrame.Equals(StarCitizen.LocalTelemetry.TelemetryFrame? other) -> bool
+StarCitizen.LocalTelemetry.TelemetryFrame.Events.get -> StarCitizen.LocalTelemetry.ValueList<StarCitizen.LocalTelemetry.GameEventType>!
+StarCitizen.LocalTelemetry.TelemetryFrame.Events.init -> void
+StarCitizen.LocalTelemetry.TelemetryFrame.ForceFeedback.get -> StarCitizen.LocalTelemetry.ForceFeedbackTelemetry?
+StarCitizen.LocalTelemetry.TelemetryFrame.ForceFeedback.init -> void
+StarCitizen.LocalTelemetry.TelemetryFrame.ReceivedAt.get -> System.DateTimeOffset
+StarCitizen.LocalTelemetry.TelemetryFrame.ReceivedAt.init -> void
+StarCitizen.LocalTelemetry.TelemetryFrame.TelemetryFrame(System.DateTimeOffset ReceivedAt, StarCitizen.LocalTelemetry.VehicleTelemetry? Vehicle, StarCitizen.LocalTelemetry.WeaponsTelemetry? Weapons, StarCitizen.LocalTelemetry.ValueList<StarCitizen.LocalTelemetry.GameEventType>! Events, StarCitizen.LocalTelemetry.ActorTelemetry? Actor, StarCitizen.LocalTelemetry.ForceFeedbackTelemetry? ForceFeedback, StarCitizen.LocalTelemetry.TurretTelemetry? Turret) -> void
+StarCitizen.LocalTelemetry.TelemetryFrame.Turret.get -> StarCitizen.LocalTelemetry.TurretTelemetry?
+StarCitizen.LocalTelemetry.TelemetryFrame.Turret.init -> void
+StarCitizen.LocalTelemetry.TelemetryFrame.Vehicle.get -> StarCitizen.LocalTelemetry.VehicleTelemetry?
+StarCitizen.LocalTelemetry.TelemetryFrame.Vehicle.init -> void
+StarCitizen.LocalTelemetry.TelemetryFrame.Weapons.get -> StarCitizen.LocalTelemetry.WeaponsTelemetry?
+StarCitizen.LocalTelemetry.TelemetryFrame.Weapons.init -> void
+StarCitizen.LocalTelemetry.TelemetrySchema
+StarCitizen.LocalTelemetry.TelemetrySections
+StarCitizen.LocalTelemetry.TelemetrySections.Actor = 8 -> StarCitizen.LocalTelemetry.TelemetrySections
+StarCitizen.LocalTelemetry.TelemetrySections.Events = 4 -> StarCitizen.LocalTelemetry.TelemetrySections
+StarCitizen.LocalTelemetry.TelemetrySections.ForceFeedback = 16 -> StarCitizen.LocalTelemetry.TelemetrySections
+StarCitizen.LocalTelemetry.TelemetrySections.None = 0 -> StarCitizen.LocalTelemetry.TelemetrySections
+StarCitizen.LocalTelemetry.TelemetrySections.Turret = 32 -> StarCitizen.LocalTelemetry.TelemetrySections
+StarCitizen.LocalTelemetry.TelemetrySections.Vehicle = 1 -> StarCitizen.LocalTelemetry.TelemetrySections
+StarCitizen.LocalTelemetry.TelemetrySections.Weapons = 2 -> StarCitizen.LocalTelemetry.TelemetrySections
+StarCitizen.LocalTelemetry.TelemetryStreamEvent
+StarCitizen.LocalTelemetry.TelemetryStreamEvent.<Clone>$() -> StarCitizen.LocalTelemetry.TelemetryStreamEvent!
+StarCitizen.LocalTelemetry.TelemetryStreamEvent.Deconstruct(out StarCitizen.LocalTelemetry.TelemetryStreamEventKind Kind, out StarCitizen.LocalTelemetry.TelemetryFrame? Frame, out string? Reason, out StarCitizen.LocalTelemetry.SchemaMismatch? Mismatch) -> void
+StarCitizen.LocalTelemetry.TelemetryStreamEvent.Equals(StarCitizen.LocalTelemetry.TelemetryStreamEvent? other) -> bool
+StarCitizen.LocalTelemetry.TelemetryStreamEvent.Frame.get -> StarCitizen.LocalTelemetry.TelemetryFrame?
+StarCitizen.LocalTelemetry.TelemetryStreamEvent.Frame.init -> void
+StarCitizen.LocalTelemetry.TelemetryStreamEvent.Kind.get -> StarCitizen.LocalTelemetry.TelemetryStreamEventKind
+StarCitizen.LocalTelemetry.TelemetryStreamEvent.Kind.init -> void
+StarCitizen.LocalTelemetry.TelemetryStreamEvent.Mismatch.get -> StarCitizen.LocalTelemetry.SchemaMismatch?
+StarCitizen.LocalTelemetry.TelemetryStreamEvent.Mismatch.init -> void
+StarCitizen.LocalTelemetry.TelemetryStreamEvent.Reason.get -> string?
+StarCitizen.LocalTelemetry.TelemetryStreamEvent.Reason.init -> void
+StarCitizen.LocalTelemetry.TelemetryStreamEvent.TelemetryStreamEvent(StarCitizen.LocalTelemetry.TelemetryStreamEventKind Kind, StarCitizen.LocalTelemetry.TelemetryFrame? Frame = null, string? Reason = null, StarCitizen.LocalTelemetry.SchemaMismatch? Mismatch = null) -> void
+StarCitizen.LocalTelemetry.TelemetryStreamEventKind
+StarCitizen.LocalTelemetry.TelemetryStreamEventKind.Connected = 1 -> StarCitizen.LocalTelemetry.TelemetryStreamEventKind
+StarCitizen.LocalTelemetry.TelemetryStreamEventKind.Connecting = 0 -> StarCitizen.LocalTelemetry.TelemetryStreamEventKind
+StarCitizen.LocalTelemetry.TelemetryStreamEventKind.Disconnected = 3 -> StarCitizen.LocalTelemetry.TelemetryStreamEventKind
+StarCitizen.LocalTelemetry.TelemetryStreamEventKind.Frame = 2 -> StarCitizen.LocalTelemetry.TelemetryStreamEventKind
+StarCitizen.LocalTelemetry.TelemetryStreamEventKind.SchemaMismatch = 4 -> StarCitizen.LocalTelemetry.TelemetryStreamEventKind
+StarCitizen.LocalTelemetry.TelemetryStreamExtensions
+StarCitizen.LocalTelemetry.TurretTelemetry
+StarCitizen.LocalTelemetry.TurretTelemetry.<Clone>$() -> StarCitizen.LocalTelemetry.TurretTelemetry!
+StarCitizen.LocalTelemetry.TurretTelemetry.Deconstruct(out bool LightAmplification) -> void
+StarCitizen.LocalTelemetry.TurretTelemetry.Equals(StarCitizen.LocalTelemetry.TurretTelemetry? other) -> bool
+StarCitizen.LocalTelemetry.TurretTelemetry.LightAmplification.get -> bool
+StarCitizen.LocalTelemetry.TurretTelemetry.LightAmplification.init -> void
+StarCitizen.LocalTelemetry.TurretTelemetry.TurretTelemetry(bool LightAmplification) -> void
+StarCitizen.LocalTelemetry.ValueList<T>
+StarCitizen.LocalTelemetry.ValueList<T>.Count.get -> int
+StarCitizen.LocalTelemetry.ValueList<T>.Equals(StarCitizen.LocalTelemetry.ValueList<T>? other) -> bool
+StarCitizen.LocalTelemetry.ValueList<T>.GetEnumerator() -> System.Collections.Generic.IEnumerator<T>!
+StarCitizen.LocalTelemetry.ValueList<T>.ValueList(System.Collections.Generic.IEnumerable<T>! items) -> void
+StarCitizen.LocalTelemetry.ValueList<T>.this[int index].get -> T
+StarCitizen.LocalTelemetry.VehicleTelemetry
+StarCitizen.LocalTelemetry.VehicleTelemetry.<Clone>$() -> StarCitizen.LocalTelemetry.VehicleTelemetry!
+StarCitizen.LocalTelemetry.VehicleTelemetry.Annunciators.get -> StarCitizen.LocalTelemetry.Annunciators?
+StarCitizen.LocalTelemetry.VehicleTelemetry.Annunciators.init -> void
+StarCitizen.LocalTelemetry.VehicleTelemetry.ClassName.get -> string!
+StarCitizen.LocalTelemetry.VehicleTelemetry.ClassName.init -> void
+StarCitizen.LocalTelemetry.VehicleTelemetry.Deconstruct(out string! Name, out string! ClassName, out string! Manufacturer, out StarCitizen.LocalTelemetry.VehicleType Type, out bool LightsOn, out StarCitizen.LocalTelemetry.DoorStatus? Doors, out StarCitizen.LocalTelemetry.Annunciators? Annunciators, out StarCitizen.LocalTelemetry.FlightTelemetry? Flight, out StarCitizen.LocalTelemetry.PowerStatus? Power, out StarCitizen.LocalTelemetry.ShieldStatus? Shields, out float Health, out StarCitizen.LocalTelemetry.MasterModeStatus? MasterMode) -> void
+StarCitizen.LocalTelemetry.VehicleTelemetry.Doors.get -> StarCitizen.LocalTelemetry.DoorStatus?
+StarCitizen.LocalTelemetry.VehicleTelemetry.Doors.init -> void
+StarCitizen.LocalTelemetry.VehicleTelemetry.Equals(StarCitizen.LocalTelemetry.VehicleTelemetry? other) -> bool
+StarCitizen.LocalTelemetry.VehicleTelemetry.Flight.get -> StarCitizen.LocalTelemetry.FlightTelemetry?
+StarCitizen.LocalTelemetry.VehicleTelemetry.Flight.init -> void
+StarCitizen.LocalTelemetry.VehicleTelemetry.Health.get -> float
+StarCitizen.LocalTelemetry.VehicleTelemetry.Health.init -> void
+StarCitizen.LocalTelemetry.VehicleTelemetry.LightsOn.get -> bool
+StarCitizen.LocalTelemetry.VehicleTelemetry.LightsOn.init -> void
+StarCitizen.LocalTelemetry.VehicleTelemetry.Manufacturer.get -> string!
+StarCitizen.LocalTelemetry.VehicleTelemetry.Manufacturer.init -> void
+StarCitizen.LocalTelemetry.VehicleTelemetry.MasterMode.get -> StarCitizen.LocalTelemetry.MasterModeStatus?
+StarCitizen.LocalTelemetry.VehicleTelemetry.MasterMode.init -> void
+StarCitizen.LocalTelemetry.VehicleTelemetry.Name.get -> string!
+StarCitizen.LocalTelemetry.VehicleTelemetry.Name.init -> void
+StarCitizen.LocalTelemetry.VehicleTelemetry.Power.get -> StarCitizen.LocalTelemetry.PowerStatus?
+StarCitizen.LocalTelemetry.VehicleTelemetry.Power.init -> void
+StarCitizen.LocalTelemetry.VehicleTelemetry.Shields.get -> StarCitizen.LocalTelemetry.ShieldStatus?
+StarCitizen.LocalTelemetry.VehicleTelemetry.Shields.init -> void
+StarCitizen.LocalTelemetry.VehicleTelemetry.Type.get -> StarCitizen.LocalTelemetry.VehicleType
+StarCitizen.LocalTelemetry.VehicleTelemetry.Type.init -> void
+StarCitizen.LocalTelemetry.VehicleTelemetry.VehicleTelemetry(string! Name, string! ClassName, string! Manufacturer, StarCitizen.LocalTelemetry.VehicleType Type, bool LightsOn, StarCitizen.LocalTelemetry.DoorStatus? Doors, StarCitizen.LocalTelemetry.Annunciators? Annunciators, StarCitizen.LocalTelemetry.FlightTelemetry? Flight, StarCitizen.LocalTelemetry.PowerStatus? Power, StarCitizen.LocalTelemetry.ShieldStatus? Shields, float Health, StarCitizen.LocalTelemetry.MasterModeStatus? MasterMode) -> void
+StarCitizen.LocalTelemetry.VehicleType
+StarCitizen.LocalTelemetry.VehicleType.Boat = 4 -> StarCitizen.LocalTelemetry.VehicleType
+StarCitizen.LocalTelemetry.VehicleType.Gravlev = 3 -> StarCitizen.LocalTelemetry.VehicleType
+StarCitizen.LocalTelemetry.VehicleType.Ground = 2 -> StarCitizen.LocalTelemetry.VehicleType
+StarCitizen.LocalTelemetry.VehicleType.Spaceship = 1 -> StarCitizen.LocalTelemetry.VehicleType
+StarCitizen.LocalTelemetry.VehicleType.Unknown = 0 -> StarCitizen.LocalTelemetry.VehicleType
+StarCitizen.LocalTelemetry.Weapon
+StarCitizen.LocalTelemetry.Weapon.<Clone>$() -> StarCitizen.LocalTelemetry.Weapon!
+StarCitizen.LocalTelemetry.Weapon.Deconstruct(out string! Name, out bool IsPowered, out bool ReadyToFire, out bool InPreset) -> void
+StarCitizen.LocalTelemetry.Weapon.Equals(StarCitizen.LocalTelemetry.Weapon? other) -> bool
+StarCitizen.LocalTelemetry.Weapon.InPreset.get -> bool
+StarCitizen.LocalTelemetry.Weapon.InPreset.init -> void
+StarCitizen.LocalTelemetry.Weapon.IsPowered.get -> bool
+StarCitizen.LocalTelemetry.Weapon.IsPowered.init -> void
+StarCitizen.LocalTelemetry.Weapon.Name.get -> string!
+StarCitizen.LocalTelemetry.Weapon.Name.init -> void
+StarCitizen.LocalTelemetry.Weapon.ReadyToFire.get -> bool
+StarCitizen.LocalTelemetry.Weapon.ReadyToFire.init -> void
+StarCitizen.LocalTelemetry.Weapon.Weapon(string! Name, bool IsPowered, bool ReadyToFire, bool InPreset) -> void
+StarCitizen.LocalTelemetry.WeaponSettings
+StarCitizen.LocalTelemetry.WeaponSettings.<Clone>$() -> StarCitizen.LocalTelemetry.WeaponSettings!
+StarCitizen.LocalTelemetry.WeaponSettings.Deconstruct(out bool FallbackConvergenceDistance, out bool MagnifiedUi, out bool PrecisionLines, out bool StaggeredFire, out bool UseLagPips, out bool UseSinglePips, out bool UseFadingPips, out bool GimbalsLocked) -> void
+StarCitizen.LocalTelemetry.WeaponSettings.Equals(StarCitizen.LocalTelemetry.WeaponSettings? other) -> bool
+StarCitizen.LocalTelemetry.WeaponSettings.FallbackConvergenceDistance.get -> bool
+StarCitizen.LocalTelemetry.WeaponSettings.FallbackConvergenceDistance.init -> void
+StarCitizen.LocalTelemetry.WeaponSettings.GimbalsLocked.get -> bool
+StarCitizen.LocalTelemetry.WeaponSettings.GimbalsLocked.init -> void
+StarCitizen.LocalTelemetry.WeaponSettings.MagnifiedUi.get -> bool
+StarCitizen.LocalTelemetry.WeaponSettings.MagnifiedUi.init -> void
+StarCitizen.LocalTelemetry.WeaponSettings.PrecisionLines.get -> bool
+StarCitizen.LocalTelemetry.WeaponSettings.PrecisionLines.init -> void
+StarCitizen.LocalTelemetry.WeaponSettings.StaggeredFire.get -> bool
+StarCitizen.LocalTelemetry.WeaponSettings.StaggeredFire.init -> void
+StarCitizen.LocalTelemetry.WeaponSettings.UseFadingPips.get -> bool
+StarCitizen.LocalTelemetry.WeaponSettings.UseFadingPips.init -> void
+StarCitizen.LocalTelemetry.WeaponSettings.UseLagPips.get -> bool
+StarCitizen.LocalTelemetry.WeaponSettings.UseLagPips.init -> void
+StarCitizen.LocalTelemetry.WeaponSettings.UseSinglePips.get -> bool
+StarCitizen.LocalTelemetry.WeaponSettings.UseSinglePips.init -> void
+StarCitizen.LocalTelemetry.WeaponSettings.WeaponSettings(bool FallbackConvergenceDistance, bool MagnifiedUi, bool PrecisionLines, bool StaggeredFire, bool UseLagPips, bool UseSinglePips, bool UseFadingPips, bool GimbalsLocked) -> void
+StarCitizen.LocalTelemetry.WeaponsTelemetry
+StarCitizen.LocalTelemetry.WeaponsTelemetry.<Clone>$() -> StarCitizen.LocalTelemetry.WeaponsTelemetry!
+StarCitizen.LocalTelemetry.WeaponsTelemetry.Countermeasures.get -> StarCitizen.LocalTelemetry.ValueList<StarCitizen.LocalTelemetry.Countermeasure!>!
+StarCitizen.LocalTelemetry.WeaponsTelemetry.Countermeasures.init -> void
+StarCitizen.LocalTelemetry.WeaponsTelemetry.Deconstruct(out StarCitizen.LocalTelemetry.WeaponSettings? Settings, out uint PresetIndex, out string! PresetName, out StarCitizen.LocalTelemetry.ValueList<StarCitizen.LocalTelemetry.Weapon!>! Weapons, out StarCitizen.LocalTelemetry.ValueList<StarCitizen.LocalTelemetry.Countermeasure!>! Countermeasures) -> void
+StarCitizen.LocalTelemetry.WeaponsTelemetry.Equals(StarCitizen.LocalTelemetry.WeaponsTelemetry? other) -> bool
+StarCitizen.LocalTelemetry.WeaponsTelemetry.PresetIndex.get -> uint
+StarCitizen.LocalTelemetry.WeaponsTelemetry.PresetIndex.init -> void
+StarCitizen.LocalTelemetry.WeaponsTelemetry.PresetName.get -> string!
+StarCitizen.LocalTelemetry.WeaponsTelemetry.PresetName.init -> void
+StarCitizen.LocalTelemetry.WeaponsTelemetry.Settings.get -> StarCitizen.LocalTelemetry.WeaponSettings?
+StarCitizen.LocalTelemetry.WeaponsTelemetry.Settings.init -> void
+StarCitizen.LocalTelemetry.WeaponsTelemetry.Weapons.get -> StarCitizen.LocalTelemetry.ValueList<StarCitizen.LocalTelemetry.Weapon!>!
+StarCitizen.LocalTelemetry.WeaponsTelemetry.Weapons.init -> void
+StarCitizen.LocalTelemetry.WeaponsTelemetry.WeaponsTelemetry(StarCitizen.LocalTelemetry.WeaponSettings? Settings, uint PresetIndex, string! PresetName, StarCitizen.LocalTelemetry.ValueList<StarCitizen.LocalTelemetry.Weapon!>! Weapons, StarCitizen.LocalTelemetry.ValueList<StarCitizen.LocalTelemetry.Countermeasure!>! Countermeasures) -> void
+const StarCitizen.LocalTelemetry.GameActions.LightsController.Category = "lights_controller" -> string!
+const StarCitizen.LocalTelemetry.GameActions.LightsController.Lights = "v_lights" -> string!
+const StarCitizen.LocalTelemetry.GameActions.LightsController.LightsOff = "v_lights_off" -> string!
+const StarCitizen.LocalTelemetry.GameActions.LightsController.LightsOn = "v_lights_on" -> string!
+const StarCitizen.LocalTelemetry.GameActions.Player.Category = "player" -> string!
+const StarCitizen.LocalTelemetry.GameActions.Player.Mobiglas = "mobiglas" -> string!
+const StarCitizen.LocalTelemetry.GameActions.Player.Starmap = "v_starmap" -> string!
+const StarCitizen.LocalTelemetry.GameActions.Player.ToggleFlashlight = "toggle_flashlight" -> string!
+const StarCitizen.LocalTelemetry.GameActions.Player.VisorWipe = "visor_wipe" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Agree = "emote_agree" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Angry = "emote_angry" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Atease = "emote_atease" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Attention = "emote_attention" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Blah = "emote_blah" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Bored = "emote_bored" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Bow = "emote_bow" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Burp = "emote_burp" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Category = "player_emotes" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Cheer = "emote_cheer" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Chicken = "emote_chicken" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Clap = "emote_clap" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Come = "emote_come" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Cry = "emote_cry" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Dance = "emote_dance" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Disagree = "emote_disagree" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Failure = "emote_failure" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Flex = "emote_flex" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Flirt = "emote_flirt" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Gasp = "emote_gasp" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Gloat = "emote_gloat" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Greet = "emote_greet" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Laugh = "emote_laugh" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Launch = "emote_launch" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Point = "emote_point" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Rude = "emote_rude" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Salute = "emote_salute" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Sit = "emote_sit" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Sleep = "emote_sleep" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Smell = "emote_smell" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Taunt = "emote_taunt" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Threaten = "emote_threaten" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Wait = "emote_wait" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Wave = "emote_wave" -> string!
+const StarCitizen.LocalTelemetry.GameActions.PlayerEmotes.Whistle = "emote_whistle" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.Category = "seat_general" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.Eject = "v_eject" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.EmergencyExit = "v_emergency_exit" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.EnterRemoteTurret1 = "v_enter_remote_turret_1" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.EnterRemoteTurret2 = "v_enter_remote_turret_2" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.EnterRemoteTurret3 = "v_enter_remote_turret_3" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.LightAmplificationOff = "v_light_amplification_off" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.LightAmplificationOn = "v_light_amplification_on" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.LightAmplificationToggle = "v_light_amplification_toggle" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.OperatorModeCycleBack = "v_operator_mode_cycle_back" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.OperatorModeCycleForward = "v_operator_mode_cycle_forward" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.SetFlightMode = "v_set_flight_mode" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.SetGunsMode = "v_set_guns_mode" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.SetMiningMode = "v_set_mining_mode" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.SetQuantumMode = "v_set_quantum_mode" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.SetRefuelMode = "v_set_refuel_mode" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.SetSalvageMode = "v_set_salvage_mode" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SeatGeneral.SetScanMode = "v_set_scan_mode" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipDocking.Category = "spaceship_docking" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipDocking.ToggleDockingRequest = "v_toggle_docking_request" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipGeneral.Category = "spaceship_general" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipGeneral.CloseAllDoors = "v_close_all_doors" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipGeneral.FlightReady = "v_flightready" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipGeneral.LockAllDoors = "v_lock_all_doors" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipGeneral.LockAllPorts = "v_lock_all_ports" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipGeneral.OpenAllDoors = "v_open_all_doors" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipGeneral.SelfDestruct = "v_self_destruct" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipGeneral.ToggleAllDoorlocks = "v_toggle_all_doorlocks" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipGeneral.ToggleAllDoors = "v_toggle_all_doors" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipGeneral.ToggleAllPortlocks = "v_toggle_all_portlocks" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipGeneral.UnlockAllDoors = "v_unlock_all_doors" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipGeneral.UnlockAllPorts = "v_unlock_all_ports" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.AtcRequest = "v_atc_request" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.Category = "spaceship_movement" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.DeployLandingSystem = "v_deploy_landing_system" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.FlightAdvancedHudOff = "v_flight_advanced_hud_off" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.FlightAdvancedHudOn = "v_flight_advanced_hud_on" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.FlightAdvancedHudToggle = "v_flight_advanced_hud_toggle" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.IfcsGsafeOff = "v_ifcs_gsafe_off" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.IfcsGsafeOn = "v_ifcs_gsafe_on" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.IfcsProximityAssistOff = "v_ifcs_proximity_assist_off" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.IfcsProximityAssistOn = "v_ifcs_proximity_assist_on" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.IfcsProximityAssistToggle = "v_ifcs_proximity_assist_toggle" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.IfcsResetGmeterMax = "v_ifcs_reset_gmeter_max" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.IfcsToggleEsp = "v_ifcs_toggle_esp" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.IfcsToggleGforceSafety = "v_ifcs_toggle_gforce_safety" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.IfcsVectorDecouplingOff = "v_ifcs_vector_decoupling_off" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.IfcsVectorDecouplingOn = "v_ifcs_vector_decoupling_on" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.IfcsVectorDecouplingToggle = "v_ifcs_vector_decoupling_toggle" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.MasterModeCycle = "v_master_mode_cycle" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.MasterModeSetNav = "v_master_mode_set_nav" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.MasterModeSetScm = "v_master_mode_set_scm" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.RetractLandingSystem = "v_retract_landing_system" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.ToggleLandingSystem = "v_toggle_landing_system" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.TransformCycle = "v_transform_cycle" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.TransformDeploy = "v_transform_deploy" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.TransformRetract = "v_transform_retract" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.VtolOff = "v_vtol_off" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.VtolOn = "v_vtol_on" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipMovement.VtolToggle = "v_vtol_toggle" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipPower.Category = "spaceship_power" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipPower.PowerSetOff = "v_power_set_off" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipPower.PowerSetOn = "v_power_set_on" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipPower.PowerSetShieldsOff = "v_power_set_shields_off" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipPower.PowerSetShieldsOn = "v_power_set_shields_on" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipPower.PowerSetThrustersOff = "v_power_set_thrusters_off" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipPower.PowerSetThrustersOn = "v_power_set_thrusters_on" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipPower.PowerSetWeaponsOff = "v_power_set_weapons_off" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipPower.PowerSetWeaponsOn = "v_power_set_weapons_on" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipPower.PowerToggle = "v_power_toggle" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipPower.PowerToggleShields = "v_power_toggle_shields" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipPower.PowerToggleThrusters = "v_power_toggle_thrusters" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipPower.PowerToggleWeapons = "v_power_toggle_weapons" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipQuantum.Category = "spaceship_quantum" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipQuantum.ToggleQdriveEngagement = "v_toggle_qdrive_engagement" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipRadar.Category = "spaceship_radar" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipRadar.InvokePing = "v_invoke_ping" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipTargetHailing.Category = "spaceship_target_hailing" -> string!
+const StarCitizen.LocalTelemetry.GameActions.SpaceshipTargetHailing.TargetHail = "v_target_hail" -> string!
+const StarCitizen.LocalTelemetry.Setup.TelemetrySetup.ConsoleVariable = "server.game.telemetry.enabled" -> string!
+const StarCitizen.LocalTelemetry.Setup.TelemetrySetup.EnvironmentVariable = "GRPC_CLIENT_SERVER_ENABLED" -> string!
+override StarCitizen.LocalTelemetry.ActionResult.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.ActionResult.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.ActionResult.ToString() -> string!
+override StarCitizen.LocalTelemetry.ActorEnvironment.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.ActorEnvironment.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.ActorEnvironment.ToString() -> string!
+override StarCitizen.LocalTelemetry.ActorStatus.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.ActorStatus.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.ActorStatus.ToString() -> string!
+override StarCitizen.LocalTelemetry.ActorTelemetry.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.ActorTelemetry.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.ActorTelemetry.ToString() -> string!
+override StarCitizen.LocalTelemetry.ActorVitals.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.ActorVitals.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.ActorVitals.ToString() -> string!
+override StarCitizen.LocalTelemetry.Annunciators.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.Annunciators.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.Annunciators.ToString() -> string!
+override StarCitizen.LocalTelemetry.Availability.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.Availability.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.Availability.ToString() -> string!
+override StarCitizen.LocalTelemetry.AxisFeedback.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.AxisFeedback.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.AxisFeedback.ToString() -> string!
+override StarCitizen.LocalTelemetry.BoostStatus.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.BoostStatus.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.BoostStatus.ToString() -> string!
+override StarCitizen.LocalTelemetry.Countermeasure.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.Countermeasure.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.Countermeasure.ToString() -> string!
+override StarCitizen.LocalTelemetry.DoorStatus.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.DoorStatus.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.DoorStatus.ToString() -> string!
+override StarCitizen.LocalTelemetry.FeedbackAxes.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.FeedbackAxes.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.FeedbackAxes.ToString() -> string!
+override StarCitizen.LocalTelemetry.FlightInstruments.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.FlightInstruments.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.FlightInstruments.ToString() -> string!
+override StarCitizen.LocalTelemetry.FlightSettings.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.FlightSettings.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.FlightSettings.ToString() -> string!
+override StarCitizen.LocalTelemetry.FlightTelemetry.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.FlightTelemetry.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.FlightTelemetry.ToString() -> string!
+override StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.ToString() -> string!
+override StarCitizen.LocalTelemetry.GameAction.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.GameAction.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.GameAction.ToString() -> string!
+override StarCitizen.LocalTelemetry.GameVersionCheck.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.GameVersionCheck.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.GameVersionCheck.ToString() -> string!
+override StarCitizen.LocalTelemetry.Gauge.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.Gauge.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.Gauge.ToString() -> string!
+override StarCitizen.LocalTelemetry.MasterModeStatus.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.MasterModeStatus.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.MasterModeStatus.ToString() -> string!
+override StarCitizen.LocalTelemetry.PowerStatus.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.PowerStatus.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.PowerStatus.ToString() -> string!
+override StarCitizen.LocalTelemetry.SchemaMismatch.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.SchemaMismatch.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.SchemaMismatch.ToString() -> string!
+override StarCitizen.LocalTelemetry.Setup.GameChannel.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.Setup.GameChannel.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.Setup.GameChannel.ToString() -> string!
+override StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation.ToString() -> string!
+override StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult.ToString() -> string!
+override StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus.ToString() -> string!
+override StarCitizen.LocalTelemetry.Setup.UserCfgChange.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.Setup.UserCfgChange.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.Setup.UserCfgChange.ToString() -> string!
+override StarCitizen.LocalTelemetry.ShieldStatus.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.ShieldStatus.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.ShieldStatus.ToString() -> string!
+override StarCitizen.LocalTelemetry.TelemetryChange.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.TelemetryChange.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.TelemetryChange.ToString() -> string!
+override StarCitizen.LocalTelemetry.TelemetryFrame.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.TelemetryFrame.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.TelemetryFrame.ToString() -> string!
+override StarCitizen.LocalTelemetry.TelemetryStreamEvent.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.TelemetryStreamEvent.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.TelemetryStreamEvent.ToString() -> string!
+override StarCitizen.LocalTelemetry.TurretTelemetry.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.TurretTelemetry.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.TurretTelemetry.ToString() -> string!
+override StarCitizen.LocalTelemetry.ValueList<T>.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.ValueList<T>.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.ValueList<T>.ToString() -> string!
+override StarCitizen.LocalTelemetry.VehicleTelemetry.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.VehicleTelemetry.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.VehicleTelemetry.ToString() -> string!
+override StarCitizen.LocalTelemetry.Weapon.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.Weapon.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.Weapon.ToString() -> string!
+override StarCitizen.LocalTelemetry.WeaponSettings.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.WeaponSettings.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.WeaponSettings.ToString() -> string!
+override StarCitizen.LocalTelemetry.WeaponsTelemetry.Equals(object? obj) -> bool
+override StarCitizen.LocalTelemetry.WeaponsTelemetry.GetHashCode() -> int
+override StarCitizen.LocalTelemetry.WeaponsTelemetry.ToString() -> string!
+static Microsoft.Extensions.DependencyInjection.TelemetryServiceCollectionExtensions.AddStarCitizenTelemetry(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, System.Action<StarCitizen.LocalTelemetry.StarCitizenTelemetryOptions!>? configure = null) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+static StarCitizen.LocalTelemetry.ActionResult.operator !=(StarCitizen.LocalTelemetry.ActionResult? left, StarCitizen.LocalTelemetry.ActionResult? right) -> bool
+static StarCitizen.LocalTelemetry.ActionResult.operator ==(StarCitizen.LocalTelemetry.ActionResult? left, StarCitizen.LocalTelemetry.ActionResult? right) -> bool
+static StarCitizen.LocalTelemetry.ActorEnvironment.operator !=(StarCitizen.LocalTelemetry.ActorEnvironment? left, StarCitizen.LocalTelemetry.ActorEnvironment? right) -> bool
+static StarCitizen.LocalTelemetry.ActorEnvironment.operator ==(StarCitizen.LocalTelemetry.ActorEnvironment? left, StarCitizen.LocalTelemetry.ActorEnvironment? right) -> bool
+static StarCitizen.LocalTelemetry.ActorStatus.operator !=(StarCitizen.LocalTelemetry.ActorStatus? left, StarCitizen.LocalTelemetry.ActorStatus? right) -> bool
+static StarCitizen.LocalTelemetry.ActorStatus.operator ==(StarCitizen.LocalTelemetry.ActorStatus? left, StarCitizen.LocalTelemetry.ActorStatus? right) -> bool
+static StarCitizen.LocalTelemetry.ActorTelemetry.operator !=(StarCitizen.LocalTelemetry.ActorTelemetry? left, StarCitizen.LocalTelemetry.ActorTelemetry? right) -> bool
+static StarCitizen.LocalTelemetry.ActorTelemetry.operator ==(StarCitizen.LocalTelemetry.ActorTelemetry? left, StarCitizen.LocalTelemetry.ActorTelemetry? right) -> bool
+static StarCitizen.LocalTelemetry.ActorVitals.operator !=(StarCitizen.LocalTelemetry.ActorVitals? left, StarCitizen.LocalTelemetry.ActorVitals? right) -> bool
+static StarCitizen.LocalTelemetry.ActorVitals.operator ==(StarCitizen.LocalTelemetry.ActorVitals? left, StarCitizen.LocalTelemetry.ActorVitals? right) -> bool
+static StarCitizen.LocalTelemetry.Annunciators.operator !=(StarCitizen.LocalTelemetry.Annunciators? left, StarCitizen.LocalTelemetry.Annunciators? right) -> bool
+static StarCitizen.LocalTelemetry.Annunciators.operator ==(StarCitizen.LocalTelemetry.Annunciators? left, StarCitizen.LocalTelemetry.Annunciators? right) -> bool
+static StarCitizen.LocalTelemetry.Availability.operator !=(StarCitizen.LocalTelemetry.Availability? left, StarCitizen.LocalTelemetry.Availability? right) -> bool
+static StarCitizen.LocalTelemetry.Availability.operator ==(StarCitizen.LocalTelemetry.Availability? left, StarCitizen.LocalTelemetry.Availability? right) -> bool
+static StarCitizen.LocalTelemetry.AxisFeedback.operator !=(StarCitizen.LocalTelemetry.AxisFeedback? left, StarCitizen.LocalTelemetry.AxisFeedback? right) -> bool
+static StarCitizen.LocalTelemetry.AxisFeedback.operator ==(StarCitizen.LocalTelemetry.AxisFeedback? left, StarCitizen.LocalTelemetry.AxisFeedback? right) -> bool
+static StarCitizen.LocalTelemetry.BoostStatus.operator !=(StarCitizen.LocalTelemetry.BoostStatus? left, StarCitizen.LocalTelemetry.BoostStatus? right) -> bool
+static StarCitizen.LocalTelemetry.BoostStatus.operator ==(StarCitizen.LocalTelemetry.BoostStatus? left, StarCitizen.LocalTelemetry.BoostStatus? right) -> bool
+static StarCitizen.LocalTelemetry.Countermeasure.operator !=(StarCitizen.LocalTelemetry.Countermeasure? left, StarCitizen.LocalTelemetry.Countermeasure? right) -> bool
+static StarCitizen.LocalTelemetry.Countermeasure.operator ==(StarCitizen.LocalTelemetry.Countermeasure? left, StarCitizen.LocalTelemetry.Countermeasure? right) -> bool
+static StarCitizen.LocalTelemetry.DoorStatus.operator !=(StarCitizen.LocalTelemetry.DoorStatus? left, StarCitizen.LocalTelemetry.DoorStatus? right) -> bool
+static StarCitizen.LocalTelemetry.DoorStatus.operator ==(StarCitizen.LocalTelemetry.DoorStatus? left, StarCitizen.LocalTelemetry.DoorStatus? right) -> bool
+static StarCitizen.LocalTelemetry.FeedbackAxes.operator !=(StarCitizen.LocalTelemetry.FeedbackAxes? left, StarCitizen.LocalTelemetry.FeedbackAxes? right) -> bool
+static StarCitizen.LocalTelemetry.FeedbackAxes.operator ==(StarCitizen.LocalTelemetry.FeedbackAxes? left, StarCitizen.LocalTelemetry.FeedbackAxes? right) -> bool
+static StarCitizen.LocalTelemetry.FlightInstruments.operator !=(StarCitizen.LocalTelemetry.FlightInstruments? left, StarCitizen.LocalTelemetry.FlightInstruments? right) -> bool
+static StarCitizen.LocalTelemetry.FlightInstruments.operator ==(StarCitizen.LocalTelemetry.FlightInstruments? left, StarCitizen.LocalTelemetry.FlightInstruments? right) -> bool
+static StarCitizen.LocalTelemetry.FlightSettings.operator !=(StarCitizen.LocalTelemetry.FlightSettings? left, StarCitizen.LocalTelemetry.FlightSettings? right) -> bool
+static StarCitizen.LocalTelemetry.FlightSettings.operator ==(StarCitizen.LocalTelemetry.FlightSettings? left, StarCitizen.LocalTelemetry.FlightSettings? right) -> bool
+static StarCitizen.LocalTelemetry.FlightTelemetry.operator !=(StarCitizen.LocalTelemetry.FlightTelemetry? left, StarCitizen.LocalTelemetry.FlightTelemetry? right) -> bool
+static StarCitizen.LocalTelemetry.FlightTelemetry.operator ==(StarCitizen.LocalTelemetry.FlightTelemetry? left, StarCitizen.LocalTelemetry.FlightTelemetry? right) -> bool
+static StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.operator !=(StarCitizen.LocalTelemetry.ForceFeedbackTelemetry? left, StarCitizen.LocalTelemetry.ForceFeedbackTelemetry? right) -> bool
+static StarCitizen.LocalTelemetry.ForceFeedbackTelemetry.operator ==(StarCitizen.LocalTelemetry.ForceFeedbackTelemetry? left, StarCitizen.LocalTelemetry.ForceFeedbackTelemetry? right) -> bool
+static StarCitizen.LocalTelemetry.GameAction.operator !=(StarCitizen.LocalTelemetry.GameAction? left, StarCitizen.LocalTelemetry.GameAction? right) -> bool
+static StarCitizen.LocalTelemetry.GameAction.operator ==(StarCitizen.LocalTelemetry.GameAction? left, StarCitizen.LocalTelemetry.GameAction? right) -> bool
+static StarCitizen.LocalTelemetry.GameActionExtensions.FlightReadyAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.RadarPingAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, System.TimeSpan? hold = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.SetDecoupledAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, bool decoupled, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.SetDoorsLockedAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, bool locked, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.SetDoorsOpenAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, bool open, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.SetGSafeAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, bool on, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.SetLandingGearAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, bool deployed, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.SetLightAmplificationAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, bool on, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.SetLightsAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, bool on, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.SetMasterModeAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, StarCitizen.LocalTelemetry.MasterMode mode, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.SetPowerAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, bool on, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.SetProximityAssistAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, bool on, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.SetShieldPowerAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, bool on, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.SetThrusterPowerAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, bool on, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.SetVtolAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, bool on, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.SetWeaponPowerAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, bool on, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.ToggleLightsAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActionExtensions.ToggleQuantumDriveAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.GameActions.Known.get -> System.Collections.Generic.IReadOnlyList<StarCitizen.LocalTelemetry.GameAction!>!
+static StarCitizen.LocalTelemetry.GameVersionCheck.operator !=(StarCitizen.LocalTelemetry.GameVersionCheck? left, StarCitizen.LocalTelemetry.GameVersionCheck? right) -> bool
+static StarCitizen.LocalTelemetry.GameVersionCheck.operator ==(StarCitizen.LocalTelemetry.GameVersionCheck? left, StarCitizen.LocalTelemetry.GameVersionCheck? right) -> bool
+static StarCitizen.LocalTelemetry.Gauge.operator !=(StarCitizen.LocalTelemetry.Gauge? left, StarCitizen.LocalTelemetry.Gauge? right) -> bool
+static StarCitizen.LocalTelemetry.Gauge.operator ==(StarCitizen.LocalTelemetry.Gauge? left, StarCitizen.LocalTelemetry.Gauge? right) -> bool
+static StarCitizen.LocalTelemetry.MasterModeStatus.operator !=(StarCitizen.LocalTelemetry.MasterModeStatus? left, StarCitizen.LocalTelemetry.MasterModeStatus? right) -> bool
+static StarCitizen.LocalTelemetry.MasterModeStatus.operator ==(StarCitizen.LocalTelemetry.MasterModeStatus? left, StarCitizen.LocalTelemetry.MasterModeStatus? right) -> bool
+static StarCitizen.LocalTelemetry.PowerStatus.operator !=(StarCitizen.LocalTelemetry.PowerStatus? left, StarCitizen.LocalTelemetry.PowerStatus? right) -> bool
+static StarCitizen.LocalTelemetry.PowerStatus.operator ==(StarCitizen.LocalTelemetry.PowerStatus? left, StarCitizen.LocalTelemetry.PowerStatus? right) -> bool
+static StarCitizen.LocalTelemetry.SchemaMismatch.operator !=(StarCitizen.LocalTelemetry.SchemaMismatch? left, StarCitizen.LocalTelemetry.SchemaMismatch? right) -> bool
+static StarCitizen.LocalTelemetry.SchemaMismatch.operator ==(StarCitizen.LocalTelemetry.SchemaMismatch? left, StarCitizen.LocalTelemetry.SchemaMismatch? right) -> bool
+static StarCitizen.LocalTelemetry.Setup.GameChannel.operator !=(StarCitizen.LocalTelemetry.Setup.GameChannel? left, StarCitizen.LocalTelemetry.Setup.GameChannel? right) -> bool
+static StarCitizen.LocalTelemetry.Setup.GameChannel.operator ==(StarCitizen.LocalTelemetry.Setup.GameChannel? left, StarCitizen.LocalTelemetry.Setup.GameChannel? right) -> bool
+static StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation.operator !=(StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation? left, StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation? right) -> bool
+static StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation.operator ==(StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation? left, StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation? right) -> bool
+static StarCitizen.LocalTelemetry.Setup.StarCitizenLocator.FindAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation?>!
+static StarCitizen.LocalTelemetry.Setup.StarCitizenLocator.FromPath(string! path, System.Collections.Generic.IReadOnlyDictionary<string!, string!>? versions = null) -> StarCitizen.LocalTelemetry.Setup.StarCitizenInstallation?
+static StarCitizen.LocalTelemetry.Setup.TelemetrySetup.Disable(StarCitizen.LocalTelemetry.Setup.GameChannel! channel, bool removeEnvironmentVariable = false) -> StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult!
+static StarCitizen.LocalTelemetry.Setup.TelemetrySetup.DisableAsync(string! channelName, string? installPath = null, bool removeEnvironmentVariable = false, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult!>!
+static StarCitizen.LocalTelemetry.Setup.TelemetrySetup.Enable(StarCitizen.LocalTelemetry.Setup.GameChannel! channel) -> StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult!
+static StarCitizen.LocalTelemetry.Setup.TelemetrySetup.EnableAsync(string! channelName, string? installPath = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult!>!
+static StarCitizen.LocalTelemetry.Setup.TelemetrySetup.GetStatus(StarCitizen.LocalTelemetry.Setup.GameChannel! channel) -> StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus!
+static StarCitizen.LocalTelemetry.Setup.TelemetrySetup.GetStatusAsync(string? installPath = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus!>!>!
+static StarCitizen.LocalTelemetry.Setup.TelemetrySetup.IsEnvironmentVariableEnabled() -> bool
+static StarCitizen.LocalTelemetry.Setup.TelemetrySetup.ReadUserCfg(string! userCfgPath) -> bool?
+static StarCitizen.LocalTelemetry.Setup.TelemetrySetup.SetEnvironmentVariable(bool enabled) -> bool
+static StarCitizen.LocalTelemetry.Setup.TelemetrySetup.WriteUserCfg(string! userCfgPath, bool enabled) -> StarCitizen.LocalTelemetry.Setup.UserCfgChange!
+static StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult.operator !=(StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult? left, StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult? right) -> bool
+static StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult.operator ==(StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult? left, StarCitizen.LocalTelemetry.Setup.TelemetrySetupResult? right) -> bool
+static StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus.operator !=(StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus? left, StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus? right) -> bool
+static StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus.operator ==(StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus? left, StarCitizen.LocalTelemetry.Setup.TelemetrySetupStatus? right) -> bool
+static StarCitizen.LocalTelemetry.Setup.UserCfgChange.operator !=(StarCitizen.LocalTelemetry.Setup.UserCfgChange? left, StarCitizen.LocalTelemetry.Setup.UserCfgChange? right) -> bool
+static StarCitizen.LocalTelemetry.Setup.UserCfgChange.operator ==(StarCitizen.LocalTelemetry.Setup.UserCfgChange? left, StarCitizen.LocalTelemetry.Setup.UserCfgChange? right) -> bool
+static StarCitizen.LocalTelemetry.ShieldStatus.operator !=(StarCitizen.LocalTelemetry.ShieldStatus? left, StarCitizen.LocalTelemetry.ShieldStatus? right) -> bool
+static StarCitizen.LocalTelemetry.ShieldStatus.operator ==(StarCitizen.LocalTelemetry.ShieldStatus? left, StarCitizen.LocalTelemetry.ShieldStatus? right) -> bool
+static StarCitizen.LocalTelemetry.StarCitizenTelemetryClient.DefaultAddress.get -> System.Uri!
+static StarCitizen.LocalTelemetry.TelemetryChange.operator !=(StarCitizen.LocalTelemetry.TelemetryChange? left, StarCitizen.LocalTelemetry.TelemetryChange? right) -> bool
+static StarCitizen.LocalTelemetry.TelemetryChange.operator ==(StarCitizen.LocalTelemetry.TelemetryChange? left, StarCitizen.LocalTelemetry.TelemetryChange? right) -> bool
+static StarCitizen.LocalTelemetry.TelemetryClientExtensions.FindActionsAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, string? category = null, bool? holdable = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<StarCitizen.LocalTelemetry.GameAction!>!>!
+static StarCitizen.LocalTelemetry.TelemetryClientExtensions.ReadTelemetryWithReconnectAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, System.TimeSpan? retryDelay = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Collections.Generic.IAsyncEnumerable<StarCitizen.LocalTelemetry.TelemetryFrame!>!
+static StarCitizen.LocalTelemetry.TelemetryClientExtensions.TriggerKnownActionAsync(this StarCitizen.LocalTelemetry.ITelemetryClient! client, string! actionName, System.TimeSpan? hold = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<StarCitizen.LocalTelemetry.ActionResult!>!
+static StarCitizen.LocalTelemetry.TelemetryFrame.operator !=(StarCitizen.LocalTelemetry.TelemetryFrame? left, StarCitizen.LocalTelemetry.TelemetryFrame? right) -> bool
+static StarCitizen.LocalTelemetry.TelemetryFrame.operator ==(StarCitizen.LocalTelemetry.TelemetryFrame? left, StarCitizen.LocalTelemetry.TelemetryFrame? right) -> bool
+static StarCitizen.LocalTelemetry.TelemetrySchema.BundledGameVersion.get -> System.Version!
+static StarCitizen.LocalTelemetry.TelemetrySchema.CheckGameVersion(StarCitizen.LocalTelemetry.Setup.GameChannel! channel) -> StarCitizen.LocalTelemetry.GameVersionCheck!
+static StarCitizen.LocalTelemetry.TelemetryStreamEvent.operator !=(StarCitizen.LocalTelemetry.TelemetryStreamEvent? left, StarCitizen.LocalTelemetry.TelemetryStreamEvent? right) -> bool
+static StarCitizen.LocalTelemetry.TelemetryStreamEvent.operator ==(StarCitizen.LocalTelemetry.TelemetryStreamEvent? left, StarCitizen.LocalTelemetry.TelemetryStreamEvent? right) -> bool
+static StarCitizen.LocalTelemetry.TelemetryStreamExtensions.Actors(this System.Collections.Generic.IAsyncEnumerable<StarCitizen.LocalTelemetry.TelemetryFrame!>! frames, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Collections.Generic.IAsyncEnumerable<StarCitizen.LocalTelemetry.ActorTelemetry!>!
+static StarCitizen.LocalTelemetry.TelemetryStreamExtensions.GameEvents(this System.Collections.Generic.IAsyncEnumerable<StarCitizen.LocalTelemetry.TelemetryFrame!>! frames, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Collections.Generic.IAsyncEnumerable<StarCitizen.LocalTelemetry.GameEventType>!
+static StarCitizen.LocalTelemetry.TelemetryStreamExtensions.ObserveChanges(this System.Collections.Generic.IAsyncEnumerable<StarCitizen.LocalTelemetry.TelemetryFrame!>! frames, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Collections.Generic.IAsyncEnumerable<StarCitizen.LocalTelemetry.TelemetryChange!>!
+static StarCitizen.LocalTelemetry.TelemetryStreamExtensions.Vehicles(this System.Collections.Generic.IAsyncEnumerable<StarCitizen.LocalTelemetry.TelemetryFrame!>! frames, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Collections.Generic.IAsyncEnumerable<StarCitizen.LocalTelemetry.VehicleTelemetry!>!
+static StarCitizen.LocalTelemetry.TelemetryStreamExtensions.Weapons(this System.Collections.Generic.IAsyncEnumerable<StarCitizen.LocalTelemetry.TelemetryFrame!>! frames, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Collections.Generic.IAsyncEnumerable<StarCitizen.LocalTelemetry.WeaponsTelemetry!>!
+static StarCitizen.LocalTelemetry.TurretTelemetry.operator !=(StarCitizen.LocalTelemetry.TurretTelemetry? left, StarCitizen.LocalTelemetry.TurretTelemetry? right) -> bool
+static StarCitizen.LocalTelemetry.TurretTelemetry.operator ==(StarCitizen.LocalTelemetry.TurretTelemetry? left, StarCitizen.LocalTelemetry.TurretTelemetry? right) -> bool
+static StarCitizen.LocalTelemetry.ValueList<T>.Empty.get -> StarCitizen.LocalTelemetry.ValueList<T>!
+static StarCitizen.LocalTelemetry.VehicleTelemetry.operator !=(StarCitizen.LocalTelemetry.VehicleTelemetry? left, StarCitizen.LocalTelemetry.VehicleTelemetry? right) -> bool
+static StarCitizen.LocalTelemetry.VehicleTelemetry.operator ==(StarCitizen.LocalTelemetry.VehicleTelemetry? left, StarCitizen.LocalTelemetry.VehicleTelemetry? right) -> bool
+static StarCitizen.LocalTelemetry.Weapon.operator !=(StarCitizen.LocalTelemetry.Weapon? left, StarCitizen.LocalTelemetry.Weapon? right) -> bool
+static StarCitizen.LocalTelemetry.Weapon.operator ==(StarCitizen.LocalTelemetry.Weapon? left, StarCitizen.LocalTelemetry.Weapon? right) -> bool
+static StarCitizen.LocalTelemetry.WeaponSettings.operator !=(StarCitizen.LocalTelemetry.WeaponSettings? left, StarCitizen.LocalTelemetry.WeaponSettings? right) -> bool
+static StarCitizen.LocalTelemetry.WeaponSettings.operator ==(StarCitizen.LocalTelemetry.WeaponSettings? left, StarCitizen.LocalTelemetry.WeaponSettings? right) -> bool
+static StarCitizen.LocalTelemetry.WeaponsTelemetry.operator !=(StarCitizen.LocalTelemetry.WeaponsTelemetry? left, StarCitizen.LocalTelemetry.WeaponsTelemetry? right) -> bool
+static StarCitizen.LocalTelemetry.WeaponsTelemetry.operator ==(StarCitizen.LocalTelemetry.WeaponsTelemetry? left, StarCitizen.LocalTelemetry.WeaponsTelemetry? right) -> bool
