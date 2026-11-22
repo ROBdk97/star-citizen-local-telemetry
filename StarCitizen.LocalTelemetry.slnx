@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/samples/">
+    <Project Path="samples/TelemetryExplorer/TelemetryExplorer.csproj" />
+    <Project Path="samples/TelemetryMonitor/TelemetryMonitor.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/StarCitizen.LocalTelemetry/StarCitizen.LocalTelemetry.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/StarCitizen.LocalTelemetry.Tests/StarCitizen.LocalTelemetry.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tools/">
+    <Project Path="tools/GameActionsGenerator/GameActionsGenerator.csproj" />
+  </Folder>
+</Solution>
